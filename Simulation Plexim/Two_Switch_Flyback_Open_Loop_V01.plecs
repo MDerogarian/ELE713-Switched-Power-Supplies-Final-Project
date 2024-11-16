@@ -53,7 +53,7 @@ Plecs {
   ScriptsDialogGeometry "[720 384 526 253]"
   ScriptsDialogSplitterPos "94"
   Schematic {
-    Location      [0, 23; 2048, 1065]
+    Location      [0, 26; 2048, 1068]
     ZoomFactor    1
     SliderPosition [795, 222]
     ShowBrowser   off
@@ -2271,44 +2271,6 @@ Plecs {
       }
     }
     Component {
-      Type          Inductor
-      Name          "L2"
-      Show          on
-      Position      [1115, 770]
-      Direction     left
-      Flipped       off
-      LabelPosition north
-      Parameter {
-        Variable      "L"
-        Value         "1e-6"
-        Show          on
-      }
-      Parameter {
-        Variable      "i_init"
-        Value         "0"
-        Show          off
-      }
-    }
-    Component {
-      Type          Inductor
-      Name          "L3"
-      Show          on
-      Position      [1605, 850]
-      Direction     down
-      Flipped       off
-      LabelPosition west
-      Parameter {
-        Variable      "L"
-        Value         "1e-6"
-        Show          on
-      }
-      Parameter {
-        Variable      "i_init"
-        Value         "0"
-        Show          off
-      }
-    }
-    Component {
       Type          From
       Name          "From31"
       Show          off
@@ -2804,8 +2766,16 @@ Plecs {
       Branch {
         Points        [655, 770]
         Branch {
-          DstComponent  "L2"
-          DstTerminal   1
+          Points        [1240, 770]
+          Branch {
+            Points        [1585, 770]
+            DstComponent  "Tr2"
+            DstTerminal   1
+          }
+          Branch {
+            DstComponent  "L1"
+            DstTerminal   1
+          }
         }
         Branch {
           DstComponent  "Am8"
@@ -3127,20 +3097,13 @@ Plecs {
     }
     Connection {
       Type          Wire
-      SrcComponent  "L3"
-      SrcTerminal   1
-      DstComponent  "Tr2"
-      DstTerminal   3
-    }
-    Connection {
-      Type          Wire
-      SrcComponent  "L3"
+      SrcComponent  "Vm4"
       SrcTerminal   2
-      Points        [1605, 770; 1625, 770]
+      Points        [1625, 830; 1625, 770]
       Branch {
-        Points        [1625, 830]
-        DstComponent  "Vm4"
-        DstTerminal   2
+        Points        [1605, 770]
+        DstComponent  "Tr2"
+        DstTerminal   3
       }
       Branch {
         DstComponent  "D3"
@@ -3418,20 +3381,6 @@ Plecs {
     }
     Connection {
       Type          Wire
-      SrcComponent  "Tr2"
-      SrcTerminal   1
-      Points        [1585, 770; 1240, 770]
-      Branch {
-        DstComponent  "L1"
-        DstTerminal   1
-      }
-      Branch {
-        DstComponent  "L2"
-        DstTerminal   2
-      }
-    }
-    Connection {
-      Type          Wire
       SrcComponent  "ESR Cout1"
       SrcTerminal   1
       DstComponent  "Cout1"
@@ -3472,4 +3421,4 @@ Plecs {
     MaxNumberOfThreads "-1"
   }
 }
-DemoSignature "Ky3LigNmEj2HS262/9N/yVJAD7QeGveyCMI6o+HFdwE="
+DemoSignature "pun8/r8OMOadPN7T6ZuSlkAR7KujdlXN9MZnv800JbU="
