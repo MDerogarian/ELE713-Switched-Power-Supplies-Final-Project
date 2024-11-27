@@ -33,6 +33,5 @@ WP2=pi*fsw;
 fP2=WP2/(2*pi);
 %%
 Hopen=G0*((1+s/WESRz)/(1+s/WP1))*((1-s/WRHP)/(1 + (s/(WP2*1)) + (s*s)/(WP2*WP2)));
-
-
+Gc =79579*(s+904.8)/(s*(s+3.6e04));
 
