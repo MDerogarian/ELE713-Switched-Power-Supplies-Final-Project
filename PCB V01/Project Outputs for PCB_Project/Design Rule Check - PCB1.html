@@ -1,0 +1,838 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 9em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://E:\Program Files\Altium\Documents\AD23\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">12/11/2024</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">12:47:19 PM</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:01</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc" class="file"><acronym title="E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc">E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">170</td></tr>
+</table>
+</td>
+</table><a name="IDVF24KXBBXJQFYRW2N4AP1UVIDLO5CODOSJWOEBTM11Z1JMXAIVP"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDHEZ3ZHTXIACCJZN2KVEKGIG1EDXTDNKZP5BPFCDJLMOZGSE5KJC">Clearance Constraint (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID52GDEKEY4SUCLRSPDH3YD5JTQK4OVAX3MJTWSTPAZCQS2RMLN0ZO">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDYQRQDNQJZXGEENKXHH04TOB3MIDQBDWKZTMZJRLD3T4XE3QSLYWK">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">170</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID4OFV3YAK5EQYGPGWCEI1UYQ3KH4GABAWBAHIU2MVFTGHYNQQCABI">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDRYPPHPBP3QAGM5PU1YTTZJ5PVFCL00VMRN5VDZLY2YOYLBAOCSB">Width Constraint (Min=0.254mm) (Max=0.254mm) (Preferred=0.254mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID45MIT5A34ZDPJTIXB22ZX0JXDOPWWKGW3ZVB2YGTESNSAGLAVYKP">Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDJKBE2YSWQPS2OK2KNBQJFWJAAJM5E2CG3XSHYSCF2OFAHMBFD5UM">Hole Size Constraint (Min=0.025mm) (Max=3mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDDWQZA2NZFIMKPLPMMQVUAPJA3BYE1HDECGTXCIPP5DUMB3XA4EVH">Hole To Hole Clearance (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDYZCQRACC1JREJGLKSB1W4VTSSI3XXEJTQCWHW1KULDRROANAJZGI">Minimum Solder Mask Sliver (Gap=0.1mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDWKSRTAWYIXWYKKIKOSHGLGFIAGBBSBUJDZAKGQDFE0HTLCV42XPD">Silk To Solder Mask (Clearance=0.01mm) (IsPad),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDBYEL2QDXTR4LKN31JQCCH43PVP3MIPSSIG05EKEZ1GPAIFG0GFI">Silk to Silk (Clearance=0.1mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDPWAHI3WI0USBLIBL1GHQ3FK5JGKLI4CHTIXIRMCWFWR212HDGWJK">Net Antennae (Tolerance=0mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID2YXRDHBDGEZMG4JPU0U4RCEBVJWW040CTL2M5XLTGR0IGQA0HDQH">Height Constraint (Min=0mm) (Max=404mm) (Prefered=12.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">170</td>
+</tr>
+</table><br><a name="IDYQRQDNQJZXGEENKXHH04TOB3MIDQBDWKZTMZJRLD3T4XE3QSLYWK"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Un-Routed Net Constraint ( (All) )</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7989.791mil|Location2.X=8330.783mil|Location1.Y=2997.254mil|Location2.Y=3068.246mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7989.791mil|Location2.X=8330.783mil|Location1.Y=2997.254mil|Location2.Y=3068.246mil|Absolute=True">Un-Routed Net Constraint: Net VCC Between Pad C11-1(203.842mm,77.032mm) on Multi-Layer And Pad C10-1(210.7mm,77.032mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8259.791mil|Location2.X=8624.512mil|Location1.Y=2997.254mil|Location2.Y=3137.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8259.791mil|Location2.X=8624.512mil|Location1.Y=2997.254mil|Location2.Y=3137.937mil|Absolute=True">Un-Routed Net Constraint: Net VCC Between Pad C10-1(210.7mm,77.032mm) on Multi-Layer And Pad C9-2(218.561mm,78.867mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8089.217mil|Location2.X=8430.209mil|Location1.Y=2997.254mil|Location2.Y=3068.246mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8089.217mil|Location2.X=8430.209mil|Location1.Y=2997.254mil|Location2.Y=3068.246mil|Absolute=True">Un-Routed Net Constraint: Net ISENSE_Power Between Pad C11-2(206.368mm,77.032mm) on Multi-Layer And Pad C10-2(213.226mm,77.032mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8359.217mil|Location2.X=8546.165mil|Location1.Y=2997.254mil|Location2.Y=3137.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8359.217mil|Location2.X=8546.165mil|Location1.Y=2997.254mil|Location2.Y=3137.937mil|Absolute=True">Un-Routed Net Constraint: Net ISENSE_Power Between Pad C10-2(213.226mm,77.032mm) on Multi-Layer And Pad C9-1(216.571mm,78.867mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=17137.516mil|Location2.X=20019.433mil|Location1.Y=2733.567mil|Location2.Y=2878.272mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=17137.516mil|Location2.X=20019.433mil|Location1.Y=2733.567mil|Location2.Y=2878.272mil|Absolute=True">Un-Routed Net Constraint: Net Vout Between Pad D3-2(436.392mm,72.009mm) on Multi-Layer And Pad C1-1(507.492mm,70.434mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=19940.567mil|Location2.X=20719.276mil|Location1.Y=2733.567mil|Location2.Y=3009.276mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=19940.567mil|Location2.X=20719.276mil|Location1.Y=2733.567mil|Location2.Y=3009.276mil|Absolute=True">Un-Routed Net Constraint: Net Vout Between Pad C1-1(507.492mm,70.434mm) on Multi-Layer And Pad P2-2(525.018mm,75.184mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7830.016mil|Location2.X=8060.783mil|Location1.Y=2997.254mil|Location2.Y=3137.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7830.016mil|Location2.X=8060.783mil|Location1.Y=2997.254mil|Location2.Y=3137.937mil|Absolute=True">Un-Routed Net Constraint: Net VCC Between Pad C12-2(199.384mm,78.867mm) on Top Layer And Pad C11-1(203.842mm,77.032mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7751.669mil|Location2.X=8160.209mil|Location1.Y=2997.254mil|Location2.Y=3137.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7751.669mil|Location2.X=8160.209mil|Location1.Y=2997.254mil|Location2.Y=3137.937mil|Absolute=True">Un-Routed Net Constraint: Net ISENSE_Power Between Pad C12-1(197.394mm,78.867mm) on Top Layer And Pad C11-2(206.368mm,77.032mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=19773.441mil|Location2.X=20019.433mil|Location1.Y=2677.941mil|Location2.Y=3116.433mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=19773.441mil|Location2.X=20019.433mil|Location1.Y=2677.941mil|Location2.Y=3116.433mil|Absolute=True">Un-Routed Net Constraint: Net NetC1_2 Between Pad R1-1(503.047mm,68.821mm) on Multi-Layer And Pad C1-2(507.492mm,78.156mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7636.63mil|Location2.X=7791.165mil|Location1.Y=3056.157mil|Location2.Y=3137.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7636.63mil|Location2.X=7791.165mil|Location1.Y=3056.157mil|Location2.Y=3137.937mil|Absolute=True">Un-Routed Net Constraint: Net ISENSE_Power Between Pad R11-2(194.637mm,78.613mm) on Top Layer And Pad C12-1(197.394mm,78.867mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=19032.457mil|Location2.X=19496.165mil|Location1.Y=5208.756mil|Location2.Y=5377.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=19032.457mil|Location2.X=19496.165mil|Location1.Y=5208.756mil|Location2.Y=5377.937mil|Absolute=True">Un-Routed Net Constraint: Net VFB Between Pad U1-2(484.091mm,132.969mm) on Multi-Layer And Pad C13-1(494.701mm,135.763mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=19032.457mil|Location2.X=19574.512mil|Location1.Y=5308.756mil|Location2.Y=5377.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=19032.457mil|Location2.X=19574.512mil|Location1.Y=5308.756mil|Location2.Y=5377.937mil|Absolute=True">Un-Routed Net Constraint: Net NetC13_2 Between Pad U1-1(484.091mm,135.509mm) on Multi-Layer And Pad C13-2(496.691mm,135.763mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=17471.669mil|Location2.X=17731.165mil|Location1.Y=5312.063mil|Location2.Y=5377.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=17471.669mil|Location2.X=17731.165mil|Location1.Y=5312.063mil|Location2.Y=5377.937mil|Absolute=True">Un-Routed Net Constraint: Net ISENSE_Power Between Pad C15-1(444.282mm,135.763mm) on Top Layer And Pad C14-1(449.87mm,135.763mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=17691.669mil|Location2.X=19397.543mil|Location1.Y=5008.756mil|Location2.Y=5377.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=17691.669mil|Location2.X=19397.543mil|Location1.Y=5008.756mil|Location2.Y=5377.937mil|Absolute=True">Un-Routed Net Constraint: Net ISENSE_Power Between Pad C14-1(449.87mm,135.763mm) on Top Layer And Pad U1-5(492.031mm,127.889mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=17770.016mil|Location2.X=17972.189mil|Location1.Y=5311.472mil|Location2.Y=5378.528mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=17770.016mil|Location2.X=17972.189mil|Location1.Y=5311.472mil|Location2.Y=5378.528mil|Absolute=True">Un-Routed Net Constraint: Net NetC14_2 Between Pad C14-2(451.86mm,135.763mm) on Top Layer And Pad R19-1(455.742mm,135.763mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=17241.472mil|Location2.X=17511.165mil|Location1.Y=5243.008mil|Location2.Y=5377.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=17241.472mil|Location2.X=17511.165mil|Location1.Y=5243.008mil|Location2.Y=5377.937mil|Absolute=True">Un-Routed Net Constraint: Net ISENSE_Power Between Pad R20-1(438.785mm,133.924mm) on Top Layer And Pad C15-1(444.282mm,135.763mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=17550.016mil|Location2.X=18046.992mil|Location1.Y=5311.472mil|Location2.Y=5378.528mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=17550.016mil|Location2.X=18046.992mil|Location1.Y=5311.472mil|Location2.Y=5378.528mil|Absolute=True">Un-Routed Net Constraint: Net VREF Between Pad C15-2(446.272mm,135.763mm) on Top Layer And Pad R19-2(457.642mm,135.763mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14986.197mil|Location2.X=17589.512mil|Location1.Y=5312.063mil|Location2.Y=5377.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14986.197mil|Location2.X=17589.512mil|Location1.Y=5312.063mil|Location2.Y=5377.937mil|Absolute=True">Un-Routed Net Constraint: Net VREF Between Pad U2-4(381.381mm,135.8mm) on Multi-Layer And Pad C15-2(446.272mm,135.763mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14595.016mil|Location2.X=17061.165mil|Location1.Y=5312.063mil|Location2.Y=5377.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14595.016mil|Location2.X=17061.165mil|Location1.Y=5312.063mil|Location2.Y=5377.937mil|Absolute=True">Un-Routed Net Constraint: Net ISENSE_Power Between Pad C19-2(371.215mm,135.763mm) on Top Layer And Pad C16-1(432.852mm,135.763mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=16523.953mil|Location2.X=17061.165mil|Location1.Y=2620.102mil|Location2.Y=5377.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=16523.953mil|Location2.X=17061.165mil|Location1.Y=2620.102mil|Location2.Y=5377.937mil|Absolute=True">Un-Routed Net Constraint: Net ISENSE_Power Between Pad C2-2(421.56mm,68.402mm) on Multi-Layer And Pad C16-1(432.852mm,135.763mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=17021.669mil|Location2.X=17308.528mil|Location1.Y=5243.008mil|Location2.Y=5377.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=17021.669mil|Location2.X=17308.528mil|Location1.Y=5243.008mil|Location2.Y=5377.937mil|Absolute=True">Un-Routed Net Constraint: Net ISENSE_Power Between Pad C16-1(432.852mm,135.763mm) on Top Layer And Pad R20-1(438.785mm,133.924mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=17100.016mil|Location2.X=17308.528mil|Location1.Y=5312.063mil|Location2.Y=5377.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=17100.016mil|Location2.X=17308.528mil|Location1.Y=5312.063mil|Location2.Y=5377.937mil|Absolute=True">Un-Routed Net Constraint: Net ISENSE Between Pad C16-2(434.842mm,135.763mm) on Top Layer And Pad R20-2(438.785mm,135.824mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=16361.472mil|Location2.X=16631.165mil|Location1.Y=5312.063mil|Location2.Y=5377.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=16361.472mil|Location2.X=16631.165mil|Location1.Y=5312.063mil|Location2.Y=5377.937mil|Absolute=True">Un-Routed Net Constraint: Net NetC17_1 Between Pad R23-2(416.433mm,135.824mm) on Top Layer And Pad C17-1(421.93mm,135.763mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15901.472mil|Location2.X=16709.512mil|Location1.Y=5312.063mil|Location2.Y=5377.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15901.472mil|Location2.X=16709.512mil|Location1.Y=5312.063mil|Location2.Y=5377.937mil|Absolute=True">Un-Routed Net Constraint: Net NetC17_2 Between Pad R24-2(404.749mm,135.824mm) on Top Layer And Pad C17-2(423.92mm,135.763mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15451.669mil|Location2.X=16198.528mil|Location1.Y=5312.063mil|Location2.Y=5377.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15451.669mil|Location2.X=16198.528mil|Location1.Y=5312.063mil|Location2.Y=5377.937mil|Absolute=True">Un-Routed Net Constraint: Net NetC17_1 Between Pad C18-1(392.974mm,135.763mm) on Top Layer And Pad R22-2(410.591mm,135.824mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14095mil|Location2.X=15491.165mil|Location1.Y=5312.063mil|Location2.Y=5377.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14095mil|Location2.X=15491.165mil|Location1.Y=5312.063mil|Location2.Y=5377.937mil|Absolute=True">Un-Routed Net Constraint: Net NetC17_1 Between Pad U3-1(358.775mm,136.093mm) on Top Layer And Pad C18-1(392.974mm,135.763mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14741.472mil|Location2.X=15569.512mil|Location1.Y=5312.063mil|Location2.Y=5377.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14741.472mil|Location2.X=15569.512mil|Location1.Y=5312.063mil|Location2.Y=5377.937mil|Absolute=True">Un-Routed Net Constraint: Net NetC18_2 Between Pad R27-2(375.285mm,135.824mm) on Top Layer And Pad C18-2(394.964mm,135.763mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14291.472mil|Location2.X=14556.165mil|Location1.Y=5243.008mil|Location2.Y=5377.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14291.472mil|Location2.X=14556.165mil|Location1.Y=5243.008mil|Location2.Y=5377.937mil|Absolute=True">Un-Routed Net Constraint: Net NetC19_1 Between Pad R28-1(363.855mm,133.924mm) on Top Layer And Pad C19-1(369.225mm,135.763mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14516.669mil|Location2.X=15143.803mil|Location1.Y=5312.063mil|Location2.Y=5377.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14516.669mil|Location2.X=15143.803mil|Location1.Y=5312.063mil|Location2.Y=5377.937mil|Absolute=True">Un-Routed Net Constraint: Net NetC19_1 Between Pad C19-1(369.225mm,135.763mm) on Top Layer And Pad U2-3(383.921mm,135.8mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14291.472mil|Location2.X=14634.512mil|Location1.Y=5312.063mil|Location2.Y=5377.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14291.472mil|Location2.X=14634.512mil|Location1.Y=5312.063mil|Location2.Y=5377.937mil|Absolute=True">Un-Routed Net Constraint: Net ISENSE_Power Between Pad R28-2(363.855mm,135.824mm) on Top Layer And Pad C19-2(371.215mm,135.763mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13500.567mil|Location2.X=14358.528mil|Location1.Y=4973.567mil|Location2.Y=5376.992mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13500.567mil|Location2.X=14358.528mil|Location1.Y=4973.567mil|Location2.Y=5376.992mil|Absolute=True">Un-Routed Net Constraint: Net ISENSE_Power Between Pad C20-1(343.916mm,127.33mm) on Multi-Layer And Pad R28-2(363.855mm,135.824mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13325.646mil|Location2.X=13579.433mil|Location1.Y=4960.646mil|Location2.Y=5052.433mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13325.646mil|Location2.X=13579.433mil|Location1.Y=4960.646mil|Location2.Y=5052.433mil|Absolute=True">Un-Routed Net Constraint: Net ISENSE_Power Between Pad U4-1(339.217mm,126.746mm) on Multi-Layer And Pad C20-1(343.916mm,127.33mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13500.567mil|Location2.X=13809.433mil|Location1.Y=4973.567mil|Location2.Y=5356.433mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13500.567mil|Location2.X=13809.433mil|Location1.Y=4973.567mil|Location2.Y=5356.433mil|Absolute=True">Un-Routed Net Constraint: Net NetC20_2 Between Pad C20-2(343.916mm,135.052mm) on Multi-Layer And Pad C21-1(349.758mm,127.33mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=16130.252mil|Location2.X=19126.559mil|Location1.Y=2620.102mil|Location2.Y=2765.898mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=16130.252mil|Location2.X=19126.559mil|Location1.Y=2620.102mil|Location2.Y=2765.898mil|Absolute=True">Un-Routed Net Constraint: Net VDCLINK Between Pad C2-1(411.56mm,68.402mm) on Multi-Layer And Pad R2-1(485.013mm,68.821mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13730.567mil|Location2.X=13984mil|Location1.Y=5243.913mil|Location2.Y=5356.433mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13730.567mil|Location2.X=13984mil|Location1.Y=5243.913mil|Location2.Y=5356.433mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad C21-2(349.758mm,135.052mm) on Multi-Layer And Pad D6-2(354.457mm,133.797mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12979.504mil|Location2.X=13809.433mil|Location1.Y=5149.504mil|Location2.Y=5356.433mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12979.504mil|Location2.X=13809.433mil|Location1.Y=5149.504mil|Location2.Y=5356.433mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad R29-2(330.581mm,131.699mm) on Multi-Layer And Pad C21-2(349.758mm,135.052mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=16523.953mil|Location2.X=18724.906mil|Location1.Y=106.236mil|Location2.Y=2765.898mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=16523.953mil|Location2.X=18724.906mil|Location1.Y=106.236mil|Location2.Y=2765.898mil|Absolute=True">Un-Routed Net Constraint: Net ISENSE_Power Between Pad C2-2(421.56mm,68.402mm) on Multi-Layer And Pad T1-4(474.011mm,4.3mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12147.063mil|Location2.X=12677.937mil|Location1.Y=5261.669mil|Location2.Y=5301.165mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12147.063mil|Location2.X=12677.937mil|Location1.Y=5261.669mil|Location2.Y=5301.165mil|Absolute=True">Un-Routed Net Constraint: Net VCC_ISO Between Pad C23-1(309.372mm,134.148mm) on Top Layer And Pad C22-1(321.183mm,134.148mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12612.063mil|Location2.X=13384.354mil|Location1.Y=5260.646mil|Location2.Y=5319.354mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12612.063mil|Location2.X=13384.354mil|Location1.Y=5260.646mil|Location2.Y=5319.354mil|Absolute=True">Un-Routed Net Constraint: Net VCC_ISO Between Pad C22-1(321.183mm,134.148mm) on Top Layer And Pad U4-4(339.217mm,134.366mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12147.063mil|Location2.X=12677.937mil|Location1.Y=5340.016mil|Location2.Y=5379.512mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12147.063mil|Location2.X=12677.937mil|Location1.Y=5340.016mil|Location2.Y=5379.512mil|Absolute=True">Un-Routed Net Constraint: Net GND_ISO Between Pad C23-2(309.372mm,136.138mm) on Top Layer And Pad C22-2(321.183mm,136.138mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12612.063mil|Location2.X=13384.354mil|Location1.Y=5160.646mil|Location2.Y=5379.512mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12612.063mil|Location2.X=13384.354mil|Location1.Y=5160.646mil|Location2.Y=5379.512mil|Absolute=True">Un-Routed Net Constraint: Net GND_ISO Between Pad C22-2(321.183mm,136.138mm) on Top Layer And Pad U4-3(339.217mm,131.826mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9187.752mil|Location2.X=12212.937mil|Location1.Y=5182.221mil|Location2.Y=5301.165mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9187.752mil|Location2.X=12212.937mil|Location1.Y=5182.221mil|Location2.Y=5301.165mil|Absolute=True">Un-Routed Net Constraint: Net VCC_ISO Between Pad U6-5(234.233mm,132.08mm) on Top Layer And Pad C23-1(309.372mm,134.148mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10329.543mil|Location2.X=12212.937mil|Location1.Y=5326.748mil|Location2.Y=5379.512mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10329.543mil|Location2.X=12212.937mil|Location1.Y=5326.748mil|Location2.Y=5379.512mil|Absolute=True">Un-Routed Net Constraint: Net GND_ISO Between Pad D7-1(263.017mm,135.941mm) on Top Layer And Pad C23-2(309.372mm,136.138mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11769.217mil|Location2.X=12001.028mil|Location1.Y=5178.972mil|Location2.Y=5308.246mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11769.217mil|Location2.X=12001.028mil|Location1.Y=5178.972mil|Location2.Y=5308.246mil|Absolute=True">Un-Routed Net Constraint: Net ISENSE_Power Between Pad C25-2(299.84mm,133.928mm) on Multi-Layer And Pad C24-1(303.974mm,132.398mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11933.972mil|Location2.X=13384.354mil|Location1.Y=4960.646mil|Location2.Y=5246.028mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11933.972mil|Location2.X=13384.354mil|Location1.Y=4960.646mil|Location2.Y=5246.028mil|Absolute=True">Un-Routed Net Constraint: Net ISENSE_Power Between Pad C24-1(303.974mm,132.398mm) on Multi-Layer And Pad U4-1(339.217mm,126.746mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11958.972mil|Location2.X=13384.354mil|Location1.Y=5060.646mil|Location2.Y=5351.028mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11958.972mil|Location2.X=13384.354mil|Location1.Y=5060.646mil|Location2.Y=5351.028mil|Absolute=True">Un-Routed Net Constraint: Net VCC_LR Between Pad C24-2(304.61mm,135.065mm) on Multi-Layer And Pad U4-2(339.217mm,129.286mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11214.937mil|Location2.X=12026.028mil|Location1.Y=4765.803mil|Location2.Y=5351.028mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11214.937mil|Location2.X=12026.028mil|Location1.Y=4765.803mil|Location2.Y=5351.028mil|Absolute=True">Un-Routed Net Constraint: Net VCC_LR Between Pad U5-3(285.496mm,122.233mm) on Top Layer And Pad C24-2(304.61mm,135.065mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11422.063mil|Location2.X=11740.783mil|Location1.Y=5237.254mil|Location2.Y=5379.512mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11422.063mil|Location2.X=11740.783mil|Location1.Y=5237.254mil|Location2.Y=5379.512mil|Absolute=True">Un-Routed Net Constraint: Net VCC Between Pad C26-2(290.957mm,136.138mm) on Top Layer And Pad C25-1(297.314mm,133.928mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11669.791mil|Location2.X=18266.992mil|Location1.Y=5237.254mil|Location2.Y=5378.528mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11669.791mil|Location2.X=18266.992mil|Location1.Y=5237.254mil|Location2.Y=5378.528mil|Absolute=True">Un-Routed Net Constraint: Net VCC Between Pad C25-1(297.314mm,133.928mm) on Multi-Layer And Pad R18-2(463.23mm,135.763mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11422.063mil|Location2.X=11840.209mil|Location1.Y=5237.254mil|Location2.Y=5308.246mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11422.063mil|Location2.X=11840.209mil|Location1.Y=5237.254mil|Location2.Y=5308.246mil|Absolute=True">Un-Routed Net Constraint: Net ISENSE_Power Between Pad C26-1(290.957mm,134.148mm) on Top Layer And Pad C25-2(299.84mm,133.928mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11159.685mil|Location2.X=11487.937mil|Location1.Y=5223.543mil|Location2.Y=5301.165mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11159.685mil|Location2.X=11487.937mil|Location1.Y=5223.543mil|Location2.Y=5301.165mil|Absolute=True">Un-Routed Net Constraint: Net ISENSE_Power Between Pad U5-2(283.956mm,133.178mm) on Top Layer And Pad C26-1(290.957mm,134.148mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11014.937mil|Location2.X=11487.937mil|Location1.Y=4765.803mil|Location2.Y=5379.512mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11014.937mil|Location2.X=11487.937mil|Location1.Y=4765.803mil|Location2.Y=5379.512mil|Absolute=True">Un-Routed Net Constraint: Net VCC Between Pad U5-1(280.416mm,122.233mm) on Top Layer And Pad C26-2(290.957mm,136.138mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14474.63mil|Location2.X=15091.37mil|Location1.Y=2852.63mil|Location2.Y=2939.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14474.63mil|Location2.X=15091.37mil|Location1.Y=2852.63mil|Location2.Y=2939.37mil|Absolute=True">Un-Routed Net Constraint: Net Vout Between Pad C3-1(368.757mm,73.558mm) on Multi-Layer And Pad C4-1(382.219mm,73.558mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14280.37mil|Location2.X=14561.37mil|Location1.Y=2852.63mil|Location2.Y=3134.433mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14280.37mil|Location2.X=14561.37mil|Location1.Y=2852.63mil|Location2.Y=3134.433mil|Absolute=True">Un-Routed Net Constraint: Net Vout Between Pad C8-2(363.223mm,78.613mm) on Top Layer And Pad C3-1(368.757mm,73.558mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14668.63mil|Location2.X=15285.37mil|Location1.Y=2852.63mil|Location2.Y=2939.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14668.63mil|Location2.X=15285.37mil|Location1.Y=2852.63mil|Location2.Y=2939.37mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad C3-2(373.685mm,73.558mm) on Multi-Layer And Pad C4-2(387.147mm,73.558mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14170.134mil|Location2.X=14755.37mil|Location1.Y=2852.63mil|Location2.Y=3134.433mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14170.134mil|Location2.X=14755.37mil|Location1.Y=2852.63mil|Location2.Y=3134.433mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad C8-1(360.423mm,78.613mm) on Top Layer And Pad C3-2(373.685mm,73.558mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15004.63mil|Location2.X=15621.37mil|Location1.Y=2852.63mil|Location2.Y=2939.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15004.63mil|Location2.X=15621.37mil|Location1.Y=2852.63mil|Location2.Y=2939.37mil|Absolute=True">Un-Routed Net Constraint: Net Vout Between Pad C4-1(382.219mm,73.558mm) on Multi-Layer And Pad C5-1(395.681mm,73.558mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15198.63mil|Location2.X=15815.37mil|Location1.Y=2852.63mil|Location2.Y=2939.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15198.63mil|Location2.X=15815.37mil|Location1.Y=2852.63mil|Location2.Y=2939.37mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad C4-2(387.147mm,73.558mm) on Multi-Layer And Pad C5-2(400.609mm,73.558mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15534.63mil|Location2.X=17224.059mil|Location1.Y=2791.728mil|Location2.Y=2939.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15534.63mil|Location2.X=17224.059mil|Location1.Y=2791.728mil|Location2.Y=2939.37mil|Absolute=True">Un-Routed Net Constraint: Net Vout Between Pad C5-1(395.681mm,73.558mm) on Multi-Layer And Pad D3-2(436.392mm,72.009mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15534.63mil|Location2.X=15738.528mil|Location1.Y=2852.63mil|Location2.Y=5302.189mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15534.63mil|Location2.X=15738.528mil|Location1.Y=2852.63mil|Location2.Y=5302.189mil|Absolute=True">Un-Routed Net Constraint: Net Vout Between Pad C5-1(395.681mm,73.558mm) on Multi-Layer And Pad R26-1(398.907mm,133.924mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15728.63mil|Location2.X=18035.929mil|Location1.Y=1873.953mil|Location2.Y=2939.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15728.63mil|Location2.X=18035.929mil|Location1.Y=1873.953mil|Location2.Y=2939.37mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad C5-2(400.609mm,73.558mm) on Multi-Layer And Pad T1-6(455.511mm,50.2mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13745.134mil|Location2.X=13994.63mil|Location1.Y=3055.567mil|Location2.Y=3134.433mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13745.134mil|Location2.X=13994.63mil|Location1.Y=3055.567mil|Location2.Y=3134.433mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad C6-1(349.628mm,78.613mm) on Top Layer And Pad C7-1(354.962mm,78.613mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13626.63mil|Location2.X=13784.63mil|Location1.Y=3055.567mil|Location2.Y=3134.433mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13626.63mil|Location2.X=13784.63mil|Location1.Y=3055.567mil|Location2.Y=3134.433mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad R6-2(346.783mm,78.613mm) on Top Layer And Pad C6-1(349.628mm,78.613mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13855.37mil|Location2.X=14104.866mil|Location1.Y=3055.567mil|Location2.Y=3134.433mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13855.37mil|Location2.X=14104.866mil|Location1.Y=3055.567mil|Location2.Y=3134.433mil|Absolute=True">Un-Routed Net Constraint: Net Vout Between Pad C6-2(352.428mm,78.613mm) on Top Layer And Pad C7-2(357.762mm,78.613mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13510.882mil|Location2.X=13894.866mil|Location1.Y=3055.567mil|Location2.Y=3134.433mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13510.882mil|Location2.X=13894.866mil|Location1.Y=3055.567mil|Location2.Y=3134.433mil|Absolute=True">Un-Routed Net Constraint: Net Vout Between Pad R6-1(343.843mm,78.613mm) on Top Layer And Pad C6-2(352.428mm,78.613mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13955.134mil|Location2.X=14209.63mil|Location1.Y=3055.567mil|Location2.Y=3134.433mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13955.134mil|Location2.X=14209.63mil|Location1.Y=3055.567mil|Location2.Y=3134.433mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad C7-1(354.962mm,78.613mm) on Top Layer And Pad C8-1(360.423mm,78.613mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13926mil|Location2.X=13994.63mil|Location1.Y=3055.567mil|Location2.Y=5291.283mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13926mil|Location2.X=13994.63mil|Location1.Y=3055.567mil|Location2.Y=5291.283mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad D6-2(354.457mm,133.797mm) on Top Layer And Pad C7-1(354.962mm,78.613mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14065.37mil|Location2.X=14319.866mil|Location1.Y=3055.567mil|Location2.Y=3134.433mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14065.37mil|Location2.X=14319.866mil|Location1.Y=3055.567mil|Location2.Y=3134.433mil|Absolute=True">Un-Routed Net Constraint: Net Vout Between Pad C7-2(357.762mm,78.613mm) on Top Layer And Pad C8-2(363.223mm,78.613mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8506.669mil|Location2.X=10190.142mil|Location1.Y=2845.764mil|Location2.Y=3137.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8506.669mil|Location2.X=10190.142mil|Location1.Y=2845.764mil|Location2.Y=3137.937mil|Absolute=True">Un-Routed Net Constraint: Net ISENSE_Power Between Pad C9-1(216.571mm,78.867mm) on Top Layer And Pad D4-1(258.033mm,73.084mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8585.016mil|Location2.X=9871.992mil|Location1.Y=3071.472mil|Location2.Y=3138.528mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8585.016mil|Location2.X=9871.992mil|Location1.Y=3071.472mil|Location2.Y=3138.528mil|Absolute=True">Un-Routed Net Constraint: Net VCC Between Pad C9-2(218.561mm,78.867mm) on Top Layer And Pad R9-2(249.997mm,78.867mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22046.787mil|Location2.X=22479.433mil|Location1.Y=2606.787mil|Location2.Y=3109.197mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22046.787mil|Location2.X=22479.433mil|Location1.Y=2606.787mil|Location2.Y=3109.197mil|Absolute=True">Un-Routed Net Constraint: Net NetD1_1 Between Pad D1-1(561.34mm,67.564mm) on Multi-Layer And Pad F1-2(569.976mm,77.972mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=19500.724mil|Location2.X=22153.213mil|Location1.Y=2806.787mil|Location2.Y=3009.276mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=19500.724mil|Location2.X=22153.213mil|Location1.Y=2806.787mil|Location2.Y=3009.276mil|Absolute=True">Un-Routed Net Constraint: Net NetD1_2 Between Pad P3-2(496.57mm,75.184mm) on Multi-Layer And Pad D1-2(561.34mm,72.644mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=21680.724mil|Location2.X=22153.213mil|Location1.Y=2406.787mil|Location2.Y=3009.276mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=21680.724mil|Location2.X=22153.213mil|Location1.Y=2406.787mil|Location2.Y=3009.276mil|Absolute=True">Un-Routed Net Constraint: Net ISENSE_Power Between Pad P1-2(551.942mm,75.184mm) on Multi-Layer And Pad D1-3(561.34mm,62.484mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=20886.63mil|Location2.X=22153.213mil|Location1.Y=2776.965mil|Location2.Y=3113.213mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=20886.63mil|Location2.X=22153.213mil|Location1.Y=2776.965mil|Location2.Y=3113.213mil|Absolute=True">Un-Routed Net Constraint: Net NetD1_4 Between Pad RT1-1(531.622mm,71.637mm) on Multi-Layer And Pad D1-4(561.34mm,77.724mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=20132.417mil|Location2.X=20267.583mil|Location1.Y=2705.764mil|Location2.Y=2768.882mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=20132.417mil|Location2.X=20267.583mil|Location1.Y=2705.764mil|Location2.Y=2768.882mil|Absolute=True">Un-Routed Net Constraint: Net NetD2_1 Between Pad D2-1(512.16mm,69.528mm) on Top Layer And Pad D2-1(514mm,69.528mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10421.453mil|Location2.X=20195.142mil|Location1.Y=2705.764mil|Location2.Y=2968.547mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10421.453mil|Location2.X=20195.142mil|Location1.Y=2705.764mil|Location2.Y=2968.547mil|Absolute=True">Un-Routed Net Constraint: Net NetD2_1 Between Pad Q2-2(265.684mm,74.422mm) on Multi-Layer And Pad D2-1(512.16mm,69.528mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=17791.709mil|Location2.X=20195.142mil|Location1.Y=86.551mil|Location2.Y=2768.882mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=17791.709mil|Location2.X=20195.142mil|Location1.Y=86.551mil|Location2.Y=2768.882mil|Absolute=True">Un-Routed Net Constraint: Net NetD2_1 Between Pad T1-2(454.011mm,4.3mm) on Multi-Layer And Pad D2-1(512.16mm,69.528mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=19678.008mil|Location2.X=20270.142mil|Location1.Y=2794.425mil|Location2.Y=5378.528mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=19678.008mil|Location2.X=20270.142mil|Location1.Y=2794.425mil|Location2.Y=5378.528mil|Absolute=True">Un-Routed Net Constraint: Net VDCLINK Between Pad R14-1(500.573mm,135.763mm) on Top Layer And Pad D2-2(513.08mm,73.51mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=19063.441mil|Location2.X=20270.142mil|Location1.Y=2677.941mil|Location2.Y=2993.764mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=19063.441mil|Location2.X=20270.142mil|Location1.Y=2677.941mil|Location2.Y=2993.764mil|Absolute=True">Un-Routed Net Constraint: Net VDCLINK Between Pad R2-1(485.013mm,68.821mm) on Multi-Layer And Pad D2-2(513.08mm,73.51mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=20129.858mil|Location2.X=21073.37mil|Location1.Y=2794.425mil|Location2.Y=3063.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=20129.858mil|Location2.X=21073.37mil|Location1.Y=2794.425mil|Location2.Y=3063.37mil|Absolute=True">Un-Routed Net Constraint: Net VDCLINK Between Pad D2-2(513.08mm,73.51mm) on Top Layer And Pad RT1-2(534.162mm,76.708mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=17137.516mil|Location2.X=19836.559mil|Location1.Y=2991.728mil|Location2.Y=3142.059mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=17137.516mil|Location2.X=19836.559mil|Location1.Y=2991.728mil|Location2.Y=3142.059mil|Absolute=True">Un-Routed Net Constraint: Net NetD3_1 Between Pad D3-1(436.392mm,77.089mm) on Multi-Layer And Pad R1-2(503.047mm,79.007mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=17137.516mil|Location2.X=17579.236mil|Location1.Y=1873.953mil|Location2.Y=3078.272mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=17137.516mil|Location2.X=17579.236mil|Location1.Y=1873.953mil|Location2.Y=3078.272mil|Absolute=True">Un-Routed Net Constraint: Net NetD3_1 Between Pad D3-1(436.392mm,77.089mm) on Multi-Layer And Pad T1-5(443.911mm,50.2mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10127.417mil|Location2.X=10262.583mil|Location1.Y=2845.764mil|Location2.Y=2908.882mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10127.417mil|Location2.X=10262.583mil|Location1.Y=2845.764mil|Location2.Y=2908.882mil|Absolute=True">Un-Routed Net Constraint: Net ISENSE_Power Between Pad D4-1(258.033mm,73.084mm) on Top Layer And Pad D4-1(259.873mm,73.084mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10199.858mil|Location2.X=10498.547mil|Location1.Y=2845.764mil|Location2.Y=3068.547mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10199.858mil|Location2.X=10498.547mil|Location1.Y=2845.764mil|Location2.Y=3068.547mil|Absolute=True">Un-Routed Net Constraint: Net ISENSE_Power Between Pad D4-1(259.873mm,73.084mm) on Top Layer And Pad Q2-3(265.684mm,76.962mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10124.858mil|Location2.X=10380.457mil|Location1.Y=2934.425mil|Location2.Y=5377.268mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10124.858mil|Location2.X=10380.457mil|Location1.Y=2934.425mil|Location2.Y=5377.268mil|Absolute=True">Un-Routed Net Constraint: Net GND_ISO Between Pad D4-2(258.953mm,77.066mm) on Top Layer And Pad D7-1(263.017mm,135.941mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9935.567mil|Location2.X=18331.205mil|Location1.Y=106.236mil|Location2.Y=3136.677mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9935.567mil|Location2.X=18331.205mil|Location1.Y=106.236mil|Location2.Y=3136.677mil|Absolute=True">Un-Routed Net Constraint: Net NetD5_1 Between Pad D5-1(253.365mm,78.9mm) on Top Layer And Pad T1-3(464.011mm,4.3mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9738.008mil|Location2.X=10014.433mil|Location1.Y=2963.323mil|Location2.Y=3138.528mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9738.008mil|Location2.X=10014.433mil|Location1.Y=2963.323mil|Location2.Y=3138.528mil|Absolute=True">Un-Routed Net Constraint: Net NetD5_2 Between Pad R9-1(248.097mm,78.867mm) on Top Layer And Pad D5-2(253.365mm,76.04mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13926mil|Location2.X=15738.528mil|Location1.Y=5317.811mil|Location2.Y=5376.992mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13926mil|Location2.X=15738.528mil|Location1.Y=5317.811mil|Location2.Y=5376.992mil|Absolute=True">Un-Routed Net Constraint: Net NetD6_1 Between Pad D6-1(354.457mm,135.697mm) on Top Layer And Pad R26-2(398.907mm,135.824mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13926mil|Location2.X=14235mil|Location1.Y=5243.913mil|Location2.Y=5335mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13926mil|Location2.X=14235mil|Location1.Y=5243.913mil|Location2.Y=5335mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad D6-2(354.457mm,133.797mm) on Top Layer And Pad U3-2(360.807mm,135.128mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9316.472mil|Location2.X=10380.457mil|Location1.Y=5317.811mil|Location2.Y=5377.268mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9316.472mil|Location2.X=10380.457mil|Location1.Y=5317.811mil|Location2.Y=5377.268mil|Absolute=True">Un-Routed Net Constraint: Net GND_ISO Between Pad R34-2(237.49mm,135.824mm) on Top Layer And Pad D7-1(263.017mm,135.941mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10329.543mil|Location2.X=10548.528mil|Location1.Y=5202.732mil|Location2.Y=5302.189mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10329.543mil|Location2.X=10548.528mil|Location1.Y=5202.732mil|Location2.Y=5302.189mil|Absolute=True">Un-Routed Net Constraint: Net GATE_T Between Pad D7-2(263.017mm,132.791mm) on Top Layer And Pad R32-1(267.081mm,133.924mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9316.472mil|Location2.X=10380.457mil|Location1.Y=5202.732mil|Location2.Y=5302.189mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9316.472mil|Location2.X=10380.457mil|Location1.Y=5202.732mil|Location2.Y=5302.189mil|Absolute=True">Un-Routed Net Constraint: Net GATE_T Between Pad R34-1(237.49mm,133.924mm) on Top Layer And Pad D7-2(263.017mm,132.791mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8816mil|Location2.X=9613.528mil|Location1.Y=5317.811mil|Location2.Y=5376.992mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8816mil|Location2.X=9613.528mil|Location1.Y=5317.811mil|Location2.Y=5376.992mil|Absolute=True">Un-Routed Net Constraint: Net NetD8_1 Between Pad D8-1(224.663mm,135.697mm) on Top Layer And Pad R33-2(243.332mm,135.824mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8545.724mil|Location2.X=8874mil|Location1.Y=5150.724mil|Location2.Y=5291.283mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8545.724mil|Location2.X=8874mil|Location1.Y=5150.724mil|Location2.Y=5291.283mil|Absolute=True">Un-Routed Net Constraint: Net ISENSE_Power Between Pad P5-2(218.313mm,132.08mm) on Multi-Layer And Pad D8-2(224.663mm,133.797mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8816mil|Location2.X=9042.248mil|Location1.Y=5232.221mil|Location2.Y=5291.283mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8816mil|Location2.X=9042.248mil|Location1.Y=5232.221mil|Location2.Y=5291.283mil|Absolute=True">Un-Routed Net Constraint: Net ISENSE_Power Between Pad D8-2(224.663mm,133.797mm) on Top Layer And Pad U6-3(228.809mm,133.35mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7649.543mil|Location2.X=8644.276mil|Location1.Y=5150.724mil|Location2.Y=5377.268mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7649.543mil|Location2.X=8644.276mil|Location1.Y=5150.724mil|Location2.Y=5377.268mil|Absolute=True">Un-Routed Net Constraint: Net ISENSE_Power Between Pad D9-1(194.945mm,135.941mm) on Top Layer And Pad P5-2(218.313mm,132.08mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7401.472mil|Location2.X=7700.457mil|Location1.Y=5317.811mil|Location2.Y=5377.268mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7401.472mil|Location2.X=7700.457mil|Location1.Y=5317.811mil|Location2.Y=5377.268mil|Absolute=True">Un-Routed Net Constraint: Net ISENSE_Power Between Pad R37-2(188.849mm,135.824mm) on Top Layer And Pad D9-1(194.945mm,135.941mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7649.543mil|Location2.X=7873.528mil|Location1.Y=5202.732mil|Location2.Y=5302.189mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7649.543mil|Location2.X=7873.528mil|Location1.Y=5202.732mil|Location2.Y=5302.189mil|Absolute=True">Un-Routed Net Constraint: Net GATE_B Between Pad D9-2(194.945mm,132.791mm) on Top Layer And Pad R36-1(199.136mm,133.924mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7401.472mil|Location2.X=7700.457mil|Location1.Y=5202.732mil|Location2.Y=5302.189mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7401.472mil|Location2.X=7700.457mil|Location1.Y=5202.732mil|Location2.Y=5302.189mil|Absolute=True">Un-Routed Net Constraint: Net GATE_B Between Pad R37-1(188.849mm,133.924mm) on Top Layer And Pad D9-2(194.945mm,132.791mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=19300.724mil|Location2.X=22479.433mil|Location1.Y=2140.567mil|Location2.Y=3009.276mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=19300.724mil|Location2.X=22479.433mil|Location1.Y=2140.567mil|Location2.Y=3009.276mil|Absolute=True">Un-Routed Net Constraint: Net NetF1_1 Between Pad P3-1(491.49mm,75.184mm) on Multi-Layer And Pad F1-1(569.976mm,55.372mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=21221.453mil|Location2.X=21579.276mil|Location1.Y=2891.453mil|Location2.Y=3009.276mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=21221.453mil|Location2.X=21579.276mil|Location1.Y=2891.453mil|Location2.Y=3009.276mil|Absolute=True">Un-Routed Net Constraint: Net VDCLINK Between Pad Q1-2(540.004mm,74.422mm) on Multi-Layer And Pad P1-1(546.862mm,75.184mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=20016.63mil|Location2.X=21779.276mil|Location1.Y=2910.724mil|Location2.Y=5373.842mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=20016.63mil|Location2.X=21779.276mil|Location1.Y=2910.724mil|Location2.Y=5373.842mil|Absolute=True">Un-Routed Net Constraint: Net ISENSE_Power Between Pad R12-2(509.089mm,135.509mm) on Top Layer And Pad P1-2(551.942mm,75.184mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=17831.079mil|Location2.X=20519.276mil|Location1.Y=1873.953mil|Location2.Y=3009.276mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=17831.079mil|Location2.X=20519.276mil|Location1.Y=1873.953mil|Location2.Y=3009.276mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad T1-6(455.511mm,50.2mm) on Multi-Layer And Pad P2-1(519.938mm,75.184mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9546.472mil|Location2.X=9959.276mil|Location1.Y=5150.724mil|Location2.Y=5302.189mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9546.472mil|Location2.X=9959.276mil|Location1.Y=5150.724mil|Location2.Y=5302.189mil|Absolute=True">Un-Routed Net Constraint: Net VCC Between Pad R33-1(243.332mm,133.924mm) on Top Layer And Pad P4-1(251.714mm,132.08mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9812.811mil|Location2.X=9959.276mil|Location1.Y=3071.472mil|Location2.Y=5249.276mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9812.811mil|Location2.X=9959.276mil|Location1.Y=3071.472mil|Location2.Y=5249.276mil|Absolute=True">Un-Routed Net Constraint: Net VCC Between Pad R9-2(249.997mm,78.867mm) on Top Layer And Pad P4-1(251.714mm,132.08mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9860.724mil|Location2.X=11065.063mil|Location1.Y=4765.803mil|Location2.Y=5249.276mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9860.724mil|Location2.X=11065.063mil|Location1.Y=4765.803mil|Location2.Y=5249.276mil|Absolute=True">Un-Routed Net Constraint: Net VCC Between Pad P4-1(251.714mm,132.08mm) on Multi-Layer And Pad U5-1(280.416mm,122.233mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10060.724mil|Location2.X=11199.055mil|Location1.Y=5150.724mil|Location2.Y=5262.913mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10060.724mil|Location2.X=11199.055mil|Location1.Y=5150.724mil|Location2.Y=5262.913mil|Absolute=True">Un-Routed Net Constraint: Net ISENSE_Power Between Pad P4-2(256.794mm,132.08mm) on Multi-Layer And Pad U5-2(283.956mm,133.178mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8974.209mil|Location2.X=10159.276mil|Location1.Y=5150.724mil|Location2.Y=5249.276mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8974.209mil|Location2.X=10159.276mil|Location1.Y=5150.724mil|Location2.Y=5249.276mil|Absolute=True">Un-Routed Net Constraint: Net ISENSE_Power Between Pad U6-4(228.809mm,132.08mm) on Top Layer And Pad P4-2(256.794mm,132.08mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8345.724mil|Location2.X=9042.248mil|Location1.Y=5150.724mil|Location2.Y=5317.779mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8345.724mil|Location2.X=9042.248mil|Location1.Y=5150.724mil|Location2.Y=5317.779mil|Absolute=True">Un-Routed Net Constraint: Net PWM Between Pad P5-1(213.233mm,132.08mm) on Multi-Layer And Pad U6-2(228.809mm,134.62mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7059.209mil|Location2.X=8444.276mil|Location1.Y=5150.724mil|Location2.Y=5317.779mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7059.209mil|Location2.X=8444.276mil|Location1.Y=5150.724mil|Location2.Y=5317.779mil|Absolute=True">Un-Routed Net Constraint: Net PWM Between Pad U7-2(180.168mm,134.62mm) on Top Layer And Pad P5-1(213.233mm,132.08mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10421.453mil|Location2.X=21298.547mil|Location1.Y=2791.453mil|Location2.Y=2868.547mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10421.453mil|Location2.X=21298.547mil|Location1.Y=2791.453mil|Location2.Y=2868.547mil|Absolute=True">Un-Routed Net Constraint: Net GATE_T Between Pad Q2-1(265.684mm,71.882mm) on Multi-Layer And Pad Q1-1(540.004mm,71.882mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=20986.63mil|Location2.X=21298.547mil|Location1.Y=2891.453mil|Location2.Y=3063.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=20986.63mil|Location2.X=21298.547mil|Location1.Y=2891.453mil|Location2.Y=3063.37mil|Absolute=True">Un-Routed Net Constraint: Net VDCLINK Between Pad RT1-2(534.162mm,76.708mm) on Multi-Layer And Pad Q1-2(540.004mm,74.422mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=17398.008mil|Location2.X=21298.547mil|Location1.Y=86.551mil|Location2.Y=3068.547mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=17398.008mil|Location2.X=21298.547mil|Location1.Y=86.551mil|Location2.Y=3068.547mil|Absolute=True">Un-Routed Net Constraint: Net GND_ISO Between Pad T1-1(444.011mm,4.3mm) on Multi-Layer And Pad Q1-3(540.004mm,76.962mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10421.453mil|Location2.X=10548.528mil|Location1.Y=2791.453mil|Location2.Y=5302.189mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10421.453mil|Location2.X=10548.528mil|Location1.Y=2791.453mil|Location2.Y=5302.189mil|Absolute=True">Un-Routed Net Constraint: Net GATE_T Between Pad Q2-1(265.684mm,71.882mm) on Multi-Layer And Pad R32-1(267.081mm,133.924mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10421.453mil|Location2.X=10676.559mil|Location1.Y=2991.453mil|Location2.Y=3142.059mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10421.453mil|Location2.X=10676.559mil|Location1.Y=2991.453mil|Location2.Y=3142.059mil|Absolute=True">Un-Routed Net Constraint: Net ISENSE_Power Between Pad Q2-3(265.684mm,76.962mm) on Multi-Layer And Pad R8-2(270.383mm,79.007mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7290.882mil|Location2.X=7459.118mil|Location1.Y=3056.157mil|Location2.Y=3133.843mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7290.882mil|Location2.X=7459.118mil|Location1.Y=3056.157mil|Location2.Y=3133.843mil|Absolute=True">Un-Routed Net Constraint: Net ISENSE_Power Between Pad R10-1(185.855mm,78.613mm) on Top Layer And Pad R10-2(188.795mm,78.613mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7176.63mil|Location2.X=7343.37mil|Location1.Y=3056.157mil|Location2.Y=3133.843mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7176.63mil|Location2.X=7343.37mil|Location1.Y=3056.157mil|Location2.Y=3133.843mil|Absolute=True">Un-Routed Net Constraint: Net ISENSE_Power Between Pad R13-2(182.953mm,78.613mm) on Top Layer And Pad R10-1(185.855mm,78.613mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7406.63mil|Location2.X=7573.37mil|Location1.Y=3056.157mil|Location2.Y=3133.843mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7406.63mil|Location2.X=7573.37mil|Location1.Y=3056.157mil|Location2.Y=3133.843mil|Absolute=True">Un-Routed Net Constraint: Net ISENSE_Power Between Pad R10-2(188.795mm,78.613mm) on Top Layer And Pad R11-1(191.697mm,78.613mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7520.882mil|Location2.X=7689.118mil|Location1.Y=3056.157mil|Location2.Y=3133.843mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7520.882mil|Location2.X=7689.118mil|Location1.Y=3056.157mil|Location2.Y=3133.843mil|Absolute=True">Un-Routed Net Constraint: Net ISENSE_Power Between Pad R11-1(191.697mm,78.613mm) on Top Layer And Pad R11-2(194.637mm,78.613mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=19900.882mil|Location2.X=20069.118mil|Location1.Y=5296.158mil|Location2.Y=5373.842mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=19900.882mil|Location2.X=20069.118mil|Location1.Y=5296.158mil|Location2.Y=5373.842mil|Absolute=True">Un-Routed Net Constraint: Net ISENSE_Power Between Pad R12-1(506.149mm,135.509mm) on Top Layer And Pad R12-2(509.089mm,135.509mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=19345.055mil|Location2.X=19953.37mil|Location1.Y=5008.756mil|Location2.Y=5373.842mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=19345.055mil|Location2.X=19953.37mil|Location1.Y=5008.756mil|Location2.Y=5373.842mil|Absolute=True">Un-Routed Net Constraint: Net ISENSE_Power Between Pad U1-5(492.031mm,127.889mm) on Multi-Layer And Pad R12-1(506.149mm,135.509mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7060.882mil|Location2.X=7229.118mil|Location1.Y=3056.157mil|Location2.Y=3133.843mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7060.882mil|Location2.X=7229.118mil|Location1.Y=3056.157mil|Location2.Y=3133.843mil|Absolute=True">Un-Routed Net Constraint: Net ISENSE_Power Between Pad R13-1(180.013mm,78.613mm) on Top Layer And Pad R13-2(182.953mm,78.613mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7059.209mil|Location2.X=7127.248mil|Location1.Y=3056.157mil|Location2.Y=5217.779mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7059.209mil|Location2.X=7127.248mil|Location1.Y=3056.157mil|Location2.Y=5217.779mil|Absolute=True">Un-Routed Net Constraint: Net ISENSE_Power Between Pad R13-1(180.013mm,78.613mm) on Top Layer And Pad U7-4(180.168mm,132.08mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18573.008mil|Location2.X=19811.992mil|Location1.Y=5311.472mil|Location2.Y=5378.528mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18573.008mil|Location2.X=19811.992mil|Location1.Y=5311.472mil|Location2.Y=5378.528mil|Absolute=True">Un-Routed Net Constraint: Net NetR14_2 Between Pad R16-1(472.506mm,135.763mm) on Top Layer And Pad R14-2(502.473mm,135.763mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15221.472mil|Location2.X=18852.189mil|Location1.Y=5243.008mil|Location2.Y=5378.528mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15221.472mil|Location2.X=18852.189mil|Location1.Y=5243.008mil|Location2.Y=5378.528mil|Absolute=True">Un-Routed Net Constraint: Net VFB Between Pad R25-1(387.477mm,133.924mm) on Top Layer And Pad R15-1(478.094mm,135.763mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18793.008mil|Location2.X=19084.945mil|Location1.Y=5208.756mil|Location2.Y=5378.528mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18793.008mil|Location2.X=19084.945mil|Location1.Y=5208.756mil|Location2.Y=5378.528mil|Absolute=True">Un-Routed Net Constraint: Net VFB Between Pad R15-1(478.094mm,135.763mm) on Top Layer And Pad U1-2(484.091mm,132.969mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18867.811mil|Location2.X=19084.945mil|Location1.Y=5308.756mil|Location2.Y=5378.528mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18867.811mil|Location2.X=19084.945mil|Location1.Y=5308.756mil|Location2.Y=5378.528mil|Absolute=True">Un-Routed Net Constraint: Net NetC13_2 Between Pad R15-2(479.994mm,135.763mm) on Top Layer And Pad U1-1(484.091mm,135.509mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18133.008mil|Location2.X=18706.992mil|Location1.Y=5311.472mil|Location2.Y=5378.528mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18133.008mil|Location2.X=18706.992mil|Location1.Y=5311.472mil|Location2.Y=5378.528mil|Absolute=True">Un-Routed Net Constraint: Net NetR16_2 Between Pad R18-1(461.33mm,135.763mm) on Top Layer And Pad R16-2(474.406mm,135.763mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18353.008mil|Location2.X=19397.543mil|Location1.Y=5108.756mil|Location2.Y=5378.528mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18353.008mil|Location2.X=19397.543mil|Location1.Y=5108.756mil|Location2.Y=5378.528mil|Absolute=True">Un-Routed Net Constraint: Net NetR17_1 Between Pad R17-1(466.918mm,135.763mm) on Top Layer And Pad U1-6(492.031mm,130.429mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8974.209mil|Location2.X=18486.992mil|Location1.Y=5282.221mil|Location2.Y=5378.528mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8974.209mil|Location2.X=18486.992mil|Location1.Y=5282.221mil|Location2.Y=5378.528mil|Absolute=True">Un-Routed Net Constraint: Net PWM Between Pad U6-2(228.809mm,134.62mm) on Top Layer And Pad R17-2(468.818mm,135.763mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18207.811mil|Location2.X=19397.543mil|Location1.Y=5208.756mil|Location2.Y=5378.528mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18207.811mil|Location2.X=19397.543mil|Location1.Y=5208.756mil|Location2.Y=5378.528mil|Absolute=True">Un-Routed Net Constraint: Net VCC Between Pad R18-2(463.23mm,135.763mm) on Top Layer And Pad U1-7(492.031mm,132.969mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=17913.008mil|Location2.X=19084.945mil|Location1.Y=5008.756mil|Location2.Y=5378.528mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=17913.008mil|Location2.X=19084.945mil|Location1.Y=5008.756mil|Location2.Y=5378.528mil|Absolute=True">Un-Routed Net Constraint: Net NetC14_2 Between Pad R19-1(455.742mm,135.763mm) on Top Layer And Pad U1-4(484.091mm,127.889mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=17987.811mil|Location2.X=19397.543mil|Location1.Y=5308.756mil|Location2.Y=5378.528mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=17987.811mil|Location2.X=19397.543mil|Location1.Y=5308.756mil|Location2.Y=5378.528mil|Absolute=True">Un-Routed Net Constraint: Net VREF Between Pad R19-2(457.642mm,135.763mm) on Top Layer And Pad U1-8(492.031mm,135.509mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=17241.472mil|Location2.X=19084.945mil|Location1.Y=5108.756mil|Location2.Y=5376.992mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=17241.472mil|Location2.X=19084.945mil|Location1.Y=5108.756mil|Location2.Y=5376.992mil|Absolute=True">Un-Routed Net Constraint: Net ISENSE Between Pad R20-2(438.785mm,135.824mm) on Top Layer And Pad U1-3(484.091mm,130.429mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=16361.472mil|Location2.X=16872.189mil|Location1.Y=5243.008mil|Location2.Y=5378.528mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=16361.472mil|Location2.X=16872.189mil|Location1.Y=5243.008mil|Location2.Y=5378.528mil|Absolute=True">Un-Routed Net Constraint: Net Vout Between Pad R23-1(416.433mm,133.924mm) on Top Layer And Pad R21-1(427.802mm,135.763mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15901.472mil|Location2.X=16946.992mil|Location1.Y=5243.008mil|Location2.Y=5378.528mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15901.472mil|Location2.X=16946.992mil|Location1.Y=5243.008mil|Location2.Y=5378.528mil|Absolute=True">Un-Routed Net Constraint: Net NetR21_2 Between Pad R24-1(404.749mm,133.924mm) on Top Layer And Pad R21-2(429.702mm,135.763mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=16908.441mil|Location2.X=19126.559mil|Location1.Y=2677.941mil|Location2.Y=3142.059mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=16908.441mil|Location2.X=19126.559mil|Location1.Y=2677.941mil|Location2.Y=3142.059mil|Absolute=True">Un-Routed Net Constraint: Net NetR2_2 Between Pad R3-1(430.276mm,68.821mm) on Multi-Layer And Pad R2-2(485.013mm,79.007mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=16131.472mil|Location2.X=16428.528mil|Location1.Y=5243.008mil|Location2.Y=5302.189mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=16131.472mil|Location2.X=16428.528mil|Location1.Y=5243.008mil|Location2.Y=5302.189mil|Absolute=True">Un-Routed Net Constraint: Net Vout Between Pad R22-1(410.591mm,133.924mm) on Top Layer And Pad R23-1(416.433mm,133.924mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15671.472mil|Location2.X=16198.528mil|Location1.Y=5243.008mil|Location2.Y=5302.189mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15671.472mil|Location2.X=16198.528mil|Location1.Y=5243.008mil|Location2.Y=5302.189mil|Absolute=True">Un-Routed Net Constraint: Net Vout Between Pad R26-1(398.907mm,133.924mm) on Top Layer And Pad R22-1(410.591mm,133.924mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=16131.472mil|Location2.X=16428.528mil|Location1.Y=5317.811mil|Location2.Y=5376.992mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=16131.472mil|Location2.X=16428.528mil|Location1.Y=5317.811mil|Location2.Y=5376.992mil|Absolute=True">Un-Routed Net Constraint: Net NetC17_1 Between Pad R22-2(410.591mm,135.824mm) on Top Layer And Pad R23-2(416.433mm,135.824mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14986.197mil|Location2.X=15968.528mil|Location1.Y=5021.197mil|Location2.Y=5302.189mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14986.197mil|Location2.X=15968.528mil|Location1.Y=5021.197mil|Location2.Y=5302.189mil|Absolute=True">Un-Routed Net Constraint: Net NetR21_2 Between Pad U2-1(381.381mm,128.27mm) on Multi-Layer And Pad R24-1(404.749mm,133.924mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15086.197mil|Location2.X=15968.528mil|Location1.Y=5021.197mil|Location2.Y=5376.992mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15086.197mil|Location2.X=15968.528mil|Location1.Y=5021.197mil|Location2.Y=5376.992mil|Absolute=True">Un-Routed Net Constraint: Net NetC17_2 Between Pad U2-2(383.921mm,128.27mm) on Multi-Layer And Pad R24-2(404.749mm,135.824mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15086.197mil|Location2.X=15288.528mil|Location1.Y=5317.654mil|Location2.Y=5376.992mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15086.197mil|Location2.X=15288.528mil|Location1.Y=5317.654mil|Location2.Y=5376.992mil|Absolute=True">Un-Routed Net Constraint: Net NetC19_1 Between Pad U2-3(383.921mm,135.8mm) on Multi-Layer And Pad R25-2(387.477mm,135.824mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14741.472mil|Location2.X=15143.803mil|Location1.Y=5021.197mil|Location2.Y=5302.189mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14741.472mil|Location2.X=15143.803mil|Location1.Y=5021.197mil|Location2.Y=5302.189mil|Absolute=True">Un-Routed Net Constraint: Net NetC17_2 Between Pad R27-1(375.285mm,133.924mm) on Top Layer And Pad U2-2(383.921mm,128.27mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14095mil|Location2.X=14808.528mil|Location1.Y=5243.008mil|Location2.Y=5302.189mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14095mil|Location2.X=14808.528mil|Location1.Y=5243.008mil|Location2.Y=5302.189mil|Absolute=True">Un-Routed Net Constraint: Net NetC17_2 Between Pad U3-3(358.775mm,134.163mm) on Top Layer And Pad R27-1(375.285mm,133.924mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12376.472mil|Location2.X=13050.496mil|Location1.Y=5049.504mil|Location2.Y=5302.189mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12376.472mil|Location2.X=13050.496mil|Location1.Y=5049.504mil|Location2.Y=5302.189mil|Absolute=True">Un-Routed Net Constraint: Net NetC17_1 Between Pad R30-1(315.214mm,133.924mm) on Top Layer And Pad R29-1(330.581mm,129.159mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12979.504mil|Location2.X=14155mil|Location1.Y=5049.504mil|Location2.Y=5373mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12979.504mil|Location2.X=14155mil|Location1.Y=5049.504mil|Location2.Y=5373mil|Absolute=True">Un-Routed Net Constraint: Net NetC17_1 Between Pad R29-1(330.581mm,129.159mm) on Multi-Layer And Pad U3-1(358.775mm,136.093mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12376.472mil|Location2.X=13050.496mil|Location1.Y=5149.504mil|Location2.Y=5376.992mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12376.472mil|Location2.X=13050.496mil|Location1.Y=5149.504mil|Location2.Y=5376.992mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad R30-2(315.214mm,135.824mm) on Top Layer And Pad R29-2(330.581mm,131.699mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10481.472mil|Location2.X=10772.189mil|Location1.Y=5243.008mil|Location2.Y=5378.528mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10481.472mil|Location2.X=10772.189mil|Location1.Y=5243.008mil|Location2.Y=5378.528mil|Absolute=True">Un-Routed Net Constraint: Net GATE_T Between Pad R32-1(267.081mm,133.924mm) on Top Layer And Pad R31-1(272.862mm,135.763mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9187.752mil|Location2.X=10846.992mil|Location1.Y=5282.221mil|Location2.Y=5378.528mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9187.752mil|Location2.X=10846.992mil|Location1.Y=5282.221mil|Location2.Y=5378.528mil|Absolute=True">Un-Routed Net Constraint: Net NetR31_2 Between Pad U6-7(234.233mm,134.62mm) on Top Layer And Pad R31-2(274.762mm,135.763mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12893.441mil|Location2.X=16971.559mil|Location1.Y=2677.941mil|Location2.Y=3142.059mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12893.441mil|Location2.X=16971.559mil|Location1.Y=2677.941mil|Location2.Y=3142.059mil|Absolute=True">Un-Routed Net Constraint: Net NetR3_2 Between Pad R7-1(328.295mm,68.821mm) on Multi-Layer And Pad R3-2(430.276mm,79.007mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9187.752mil|Location2.X=10548.528mil|Location1.Y=5232.221mil|Location2.Y=5376.992mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9187.752mil|Location2.X=10548.528mil|Location1.Y=5232.221mil|Location2.Y=5376.992mil|Absolute=True">Un-Routed Net Constraint: Net NetR32_2 Between Pad U6-6(234.233mm,133.35mm) on Top Layer And Pad R32-2(267.081mm,135.824mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9187.752mil|Location2.X=9383.528mil|Location1.Y=5317.811mil|Location2.Y=5376.992mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9187.752mil|Location2.X=9383.528mil|Location1.Y=5317.811mil|Location2.Y=5376.992mil|Absolute=True">Un-Routed Net Constraint: Net GND_ISO Between Pad U6-8(234.233mm,135.89mm) on Top Layer And Pad R34-2(237.49mm,135.824mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7806.472mil|Location2.X=8103.528mil|Location1.Y=5243.008mil|Location2.Y=5302.189mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7806.472mil|Location2.X=8103.528mil|Location1.Y=5243.008mil|Location2.Y=5302.189mil|Absolute=True">Un-Routed Net Constraint: Net GATE_B Between Pad R36-1(199.136mm,133.924mm) on Top Layer And Pad R35-1(204.978mm,133.924mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7272.752mil|Location2.X=8103.528mil|Location1.Y=5282.221mil|Location2.Y=5376.992mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7272.752mil|Location2.X=8103.528mil|Location1.Y=5282.221mil|Location2.Y=5376.992mil|Absolute=True">Un-Routed Net Constraint: Net NetR35_2 Between Pad U7-7(185.592mm,134.62mm) on Top Layer And Pad R35-2(204.978mm,135.824mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7272.752mil|Location2.X=7873.528mil|Location1.Y=5232.221mil|Location2.Y=5376.992mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7272.752mil|Location2.X=7873.528mil|Location1.Y=5232.221mil|Location2.Y=5376.992mil|Absolute=True">Un-Routed Net Constraint: Net NetR36_2 Between Pad U7-6(185.592mm,133.35mm) on Top Layer And Pad R36-2(199.136mm,135.824mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7272.752mil|Location2.X=7468.528mil|Location1.Y=5317.811mil|Location2.Y=5376.992mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7272.752mil|Location2.X=7468.528mil|Location1.Y=5317.811mil|Location2.Y=5376.992mil|Absolute=True">Un-Routed Net Constraint: Net ISENSE_Power Between Pad U7-8(185.592mm,135.89mm) on Top Layer And Pad R37-2(188.849mm,135.824mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13050.882mil|Location2.X=13333.37mil|Location1.Y=3056.157mil|Location2.Y=3133.843mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13050.882mil|Location2.X=13333.37mil|Location1.Y=3056.157mil|Location2.Y=3133.843mil|Absolute=True">Un-Routed Net Constraint: Net Vout Between Pad R4-1(332.159mm,78.613mm) on Top Layer And Pad R5-1(338.001mm,78.613mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13166.63mil|Location2.X=13449.118mil|Location1.Y=3056.157mil|Location2.Y=3133.843mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13166.63mil|Location2.X=13449.118mil|Location1.Y=3056.157mil|Location2.Y=3133.843mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad R4-2(335.099mm,78.613mm) on Top Layer And Pad R5-2(340.941mm,78.613mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13280.882mil|Location2.X=13563.37mil|Location1.Y=3056.157mil|Location2.Y=3133.843mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13280.882mil|Location2.X=13563.37mil|Location1.Y=3056.157mil|Location2.Y=3133.843mil|Absolute=True">Un-Routed Net Constraint: Net Vout Between Pad R5-1(338.001mm,78.613mm) on Top Layer And Pad R6-1(343.843mm,78.613mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13396.63mil|Location2.X=13679.118mil|Location1.Y=3056.157mil|Location2.Y=3133.843mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13396.63mil|Location2.X=13679.118mil|Location1.Y=3056.157mil|Location2.Y=3133.843mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad R5-2(340.941mm,78.613mm) on Top Layer And Pad R6-2(346.783mm,78.613mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10613.441mil|Location2.X=12956.559mil|Location1.Y=2677.941mil|Location2.Y=3142.059mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10613.441mil|Location2.X=12956.559mil|Location1.Y=2677.941mil|Location2.Y=3142.059mil|Absolute=True">Un-Routed Net Constraint: Net NetR7_2 Between Pad R8-1(270.383mm,68.821mm) on Multi-Layer And Pad R7-2(328.295mm,79.007mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13325.646mil|Location2.X=17563.488mil|Location1.Y=86.551mil|Location2.Y=5219.354mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13325.646mil|Location2.X=17563.488mil|Location1.Y=86.551mil|Location2.Y=5219.354mil|Absolute=True">Un-Routed Net Constraint: Net GND_ISO Between Pad U4-3(339.217mm,131.826mm) on Multi-Layer And Pad T1-1(444.011mm,4.3mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11114.937mil|Location2.X=11199.055mil|Location1.Y=4765.803mil|Location2.Y=5262.913mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11114.937mil|Location2.X=11199.055mil|Location1.Y=4765.803mil|Location2.Y=5262.913mil|Absolute=True">Un-Routed Net Constraint: Net ISENSE_Power Between Pad U5-2(282.956mm,122.233mm) on Top Layer And Pad U5-2(283.956mm,133.178mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8974.209mil|Location2.X=11265.063mil|Location1.Y=4765.803mil|Location2.Y=5367.779mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8974.209mil|Location2.X=11265.063mil|Location1.Y=4765.803mil|Location2.Y=5367.779mil|Absolute=True">Un-Routed Net Constraint: Net VCC_LR Between Pad U6-1(228.809mm,135.89mm) on Top Layer And Pad U5-3(285.496mm,122.233mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7272.752mil|Location2.X=9042.248mil|Location1.Y=5182.221mil|Location2.Y=5367.779mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7272.752mil|Location2.X=9042.248mil|Location1.Y=5182.221mil|Location2.Y=5367.779mil|Absolute=True">Un-Routed Net Constraint: Net VCC_LR Between Pad U7-5(185.592mm,132.08mm) on Top Layer And Pad U6-1(228.809mm,135.89mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8974.209mil|Location2.X=9042.248mil|Location1.Y=5182.221mil|Location2.Y=5267.779mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8974.209mil|Location2.X=9042.248mil|Location1.Y=5182.221mil|Location2.Y=5267.779mil|Absolute=True">Un-Routed Net Constraint: Net ISENSE_Power Between Pad U6-4(228.809mm,132.08mm) on Top Layer And Pad U6-3(228.809mm,133.35mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7059.209mil|Location2.X=7340.791mil|Location1.Y=5182.221mil|Location2.Y=5367.779mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7059.209mil|Location2.X=7340.791mil|Location1.Y=5182.221mil|Location2.Y=5367.779mil|Absolute=True">Un-Routed Net Constraint: Net VCC_LR Between Pad U7-1(180.168mm,135.89mm) on Top Layer And Pad U7-5(185.592mm,132.08mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7059.209mil|Location2.X=7127.248mil|Location1.Y=5182.221mil|Location2.Y=5267.779mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7059.209mil|Location2.X=7127.248mil|Location1.Y=5182.221mil|Location2.Y=5267.779mil|Absolute=True">Un-Routed Net Constraint: Net ISENSE_Power Between Pad U7-4(180.168mm,132.08mm) on Top Layer And Pad U7-3(180.168mm,133.35mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7059.209mil|Location2.X=7340.791mil|Location1.Y=5232.221mil|Location2.Y=5367.779mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7059.209mil|Location2.X=7340.791mil|Location1.Y=5232.221mil|Location2.Y=5367.779mil|Absolute=True">Un-Routed Net Constraint: Net ISENSE_Power Between Pad U7-3(180.168mm,133.35mm) on Top Layer And Pad U7-8(185.592mm,135.89mm) on Top Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>
