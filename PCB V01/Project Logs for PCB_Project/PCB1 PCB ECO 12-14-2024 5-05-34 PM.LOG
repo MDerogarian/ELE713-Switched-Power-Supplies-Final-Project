@@ -1,0 +1,15 @@
+Removed Pin From Net: NetName=ISENSE_Power Pin=R10-1
+Removed Pin From Net: NetName=ISENSE_Power Pin=R11-1
+Removed Pin From Net: NetName=ISENSE_Power Pin=R12-1
+Removed Pin From Net: NetName=ISENSE_Power Pin=R13-1
+Change Component Footprint: Designator=C24 Old Footprint=Capacitor Ceramic Lens DIP New Footprint=Capacitor Ceramic SMD 805
+Change Component Comment : Designator=C24 Old Comment=(DIGIKEY Part Number) New Comment=C0805C104J5RAC7800
+Change Component Description : Designator=U6 Old Description=Gate Driver Ic, 1-Ch, 3V-15V, 9.8A, Dso Rohs Compliant: Yes New Description=Gate Driver Ic, 1-Ch, 3V-15V, 9.8A, Dso Rohs Compliant: Yes |Infineon 1EDB8275FXUMA1
+Change Component Description : Designator=U7 Old Description=Gate Driver Ic, 1-Ch, 3V-15V, 9.8A, Dso Rohs Compliant: Yes New Description=Gate Driver Ic, 1-Ch, 3V-15V, 9.8A, Dso Rohs Compliant: Yes |Infineon 1EDB8275FXUMA1
+Change component parameters: Designator = "C24" ("C24"); Footprint = "Capacitor Ceramic Lens DIP"; UniqueID = "\YZKMCDYA" ("\YZKMCDYA")
+Change component parameters (AddParameter): Name = "Value"; Value = "100nF, 50V"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=P_GND Pin=R10-1
+Added Pin To Net: NetName=P_GND Pin=R11-1
+Added Pin To Net: NetName=P_GND Pin=R12-1
+Added Pin To Net: NetName=P_GND Pin=R13-1
+Added Net: Name=P_GND
