@@ -1,0 +1,5 @@
+Removed Pin From Net: NetName=PGND Pin=R8-2
+Removed Member From Class: ClassName=Sheet2 Member=R3
+Removed Member From Class: ClassName=Sheet2 Member=R7
+Removed Member From Class: ClassName=Sheet2 Member=R8
+Added Pin To Net: NetName=PGND Pin=R2-2
