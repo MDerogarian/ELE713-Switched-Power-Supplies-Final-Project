@@ -1,0 +1,35 @@
+Change Footprint: Cannot match pads with new footprint in component :D2 Footprint:Diode SMD TO-252 (DPAK)
+Change Footprint: Cannot match pads with new footprint in component :D4 Footprint:Diode SMD TO-252 (DPAK)
+Change Component Comment : Designator=D3 Old Comment=1655-1099-ND New Comment=MBR10150_T0
+Change Component Designator: OldDesignator=+ DC Link - NewDesignator=+ DC Link -1
+Change Component Designator: OldDesignator=AC Input NewDesignator=AC Input1
+Change Component Designator: OldDesignator=R13 NewDesignator=R12
+Change Component Designator: OldDesignator=R14 NewDesignator=R13
+Change Component Designator: OldDesignator=R15 NewDesignator=R14
+Change Component Designator: OldDesignator=R16 NewDesignator=R15
+Change Component Designator: OldDesignator=R17 NewDesignator=R16
+Change Component Designator: OldDesignator=R18 NewDesignator=R17
+Change Component Designator: OldDesignator=R19 NewDesignator=R18
+Change Component Designator: OldDesignator=R20 NewDesignator=R19
+Change Component Designator: OldDesignator=R21 NewDesignator=R20
+Change Component Designator: OldDesignator=R22 NewDesignator=R21
+Change Component Designator: OldDesignator=R23 NewDesignator=R22
+Change Component Designator: OldDesignator=R24 NewDesignator=R23
+Change Component Designator: OldDesignator=R25 NewDesignator=R24
+Change Component Designator: OldDesignator=R26 NewDesignator=R25
+Change Component Designator: OldDesignator=R27 NewDesignator=R26
+Change Component Designator: OldDesignator=R28 NewDesignator=R27
+Change Component Designator: OldDesignator=R29 NewDesignator=R28
+Change Component Designator: OldDesignator=R30 NewDesignator=R29
+Change Component Designator: OldDesignator=R32 NewDesignator=R30
+Change Component Designator: OldDesignator=R33 NewDesignator=R31
+Change Component Designator: OldDesignator=R35 NewDesignator=R32
+Change Component Designator: OldDesignator=U? NewDesignator=U7
+Change Component Designator: OldDesignator=U? NewDesignator=U8
+Change Net Name : Old Net Name=NetAC Input_1 New Net Name=NetAC Input1_1
+Change Net Name : Old Net Name=NetAC Input_2 New Net Name=NetAC Input1_2
+Change Net Name : Old Net Name=NetR19_2 New Net Name=NetR18_2
+Change Net Name : Old Net Name=NetR30_2 New Net Name=NetR29_2
+Change Net Name : Old Net Name=NetR33_2 New Net Name=NetR31_2
+Added Member To Class: ClassName=Sheet1 Member=Component U8 IS341WTR-ND
+Added Room: Name=Sheet1
