@@ -1,191 +1,213 @@
 Protel Design System Design Rule Check
 PCB File : E:\Academic\METU\ELE713 - Switched Power Supplies\Final Project\PCB V01\PCB1.PcbDoc
-Date     : 12/22/2024
-Time     : 11:33:00 AM
+Date     : 12/31/2024
+Time     : 4:23:02 PM
 
 Processing Rule : Clearance Constraint (Gap=0.254mm) (All),(All)
-   Violation between Clearance Constraint: (Collision < 0.254mm) Between Pad U5-2(116.586mm,54.229mm) on Top Layer And Region (0 hole(s)) Top Layer 
+   Violation between Clearance Constraint: (Collision < 0.254mm) Between Pad U4-2(74.676mm,81.661mm) on Top Layer And Region (0 hole(s)) Top Layer 
 Rule Violations :1
 
 Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
-   Violation between Short-Circuit Constraint: Between Pad U5-2(116.586mm,54.229mm) on Top Layer And Region (0 hole(s)) Top Layer Location : [X = 116.586mm][Y = 54.229mm]
+   Violation between Short-Circuit Constraint: Between Pad U4-2(74.676mm,81.661mm) on Top Layer And Region (0 hole(s)) Top Layer Location : [X = 74.676mm][Y = 81.661mm]
 Rule Violations :1
 
 Processing Rule : Un-Routed Net Constraint ( (All) )
-   Violation between Un-Routed Net Constraint: Net VCC Between Pad C10-1(142.501mm,75.762mm) on Multi-Layer And Pad C9-2(149.479mm,74.67mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net VCC Between Pad R33-1(124.714mm,62.169mm) on Top Layer And Pad C10-1(142.501mm,75.762mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net VCC Between Pad C10-1(142.501mm,75.762mm) on Multi-Layer And Pad R9-2(145.984mm,81.915mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net PGND Between Pad C10-2(145.027mm,75.762mm) on Multi-Layer And Pad C9-1(149.479mm,72.68mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net PGND Between Pad D4-1(138.461mm,99.373mm) on Top Layer And Pad C10-2(145.027mm,75.762mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net PGND Between Pad U5-2(116.586mm,54.229mm) on Top Layer And Pad C10-2(145.027mm,75.762mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net Vout Between Pad D3-2(208.28mm,119.614mm) on Multi-Layer And Pad C1-1(226.111mm,111.379mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net Vout Between Pad C1-1(226.111mm,111.379mm) on Multi-Layer And Pad R5-1(227.33mm,102.308mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net VCC Between Pad C12-2(225.806mm,87.878mm) on Top Layer And Pad C11-1(228.607mm,81.35mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net PGND Between Pad C12-1(225.806mm,85.888mm) on Top Layer And Pad C11-2(231.133mm,81.35mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net PGND Between Pad C11-2(231.133mm,81.35mm) on Multi-Layer And Pad R28-2(248.92mm,68.133mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net NetC1_2 Between Pad C1-2(218.389mm,111.379mm) on Multi-Layer And Pad R1-1(227.724mm,106.934mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net VCC Between Pad R9-2(145.984mm,81.915mm) on Top Layer And Pad C12-2(225.806mm,87.878mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net VFB Between Pad R15-1(66.675mm,80.833mm) on Top Layer And Pad C13-1(72.009mm,74.767mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net VFB Between Pad C13-1(72.009mm,74.767mm) on Top Layer And Pad R25-1(255.397mm,66.106mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net NetC13_2 Between Pad R15-2(66.675mm,78.933mm) on Top Layer And Pad C13-2(72.009mm,72.777mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net PGND Between Pad U1-5(62.771mm,72.644mm) on Multi-Layer And Pad C14-1(65.659mm,72.934mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net NetC14_2 Between Pad C14-2(65.659mm,74.924mm) on Top Layer And Pad R19-1(70.993mm,80.833mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net NetC14_2 Between Pad U1-4(54.831mm,72.644mm) on Multi-Layer And Pad C14-2(65.659mm,74.924mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net PGND Between Pad P1-2(34.036mm,71.755mm) on Multi-Layer And Pad C15-1(52.324mm,77.887mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net PGND Between Pad C15-1(52.324mm,77.887mm) on Top Layer And Pad U1-5(62.771mm,72.644mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net VREF Between Pad C15-2(52.324mm,79.877mm) on Top Layer And Pad U1-8(62.771mm,80.264mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net PGND Between Pad C16-1(62.702mm,65.278mm) on Top Layer And Pad D8-2(77.597mm,67.056mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net PGND Between Pad C16-1(62.702mm,65.278mm) on Top Layer And Pad U1-5(62.771mm,72.644mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net ISENSE Between Pad U1-3(54.831mm,75.184mm) on Multi-Layer And Pad C16-2(60.712mm,65.278mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net NetC17_1 Between Pad C17-1(49.53mm,71.537mm) on Top Layer And Pad C18-1(62.702mm,69.469mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net NetC17_2 Between Pad C17-2(49.53mm,73.527mm) on Top Layer And Pad U2-2(231.939mm,66.421mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net NetC17_1 Between Pad C18-1(62.702mm,69.469mm) on Top Layer And Pad R29-1(207.264mm,62.865mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net NetC18_2 Between Pad C18-2(60.712mm,69.469mm) on Top Layer And Pad R27-2(277.18mm,106.68mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net NetC19_1 Between Pad C19-1(252.349mm,66.076mm) on Top Layer And Pad R25-2(255.397mm,68.006mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net NetC19_1 Between Pad R28-1(248.92mm,66.233mm) on Top Layer And Pad C19-1(252.349mm,66.076mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net PGND Between Pad C19-2(252.349mm,68.066mm) on Top Layer And Pad C24-1(270.891mm,32.802mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net PGND Between Pad R28-2(248.92mm,68.133mm) on Top Layer And Pad C19-2(252.349mm,68.066mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net PGND Between Pad C20-1(245.618mm,63.068mm) on Multi-Layer And Pad R28-2(248.92mm,68.133mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net PGND Between Pad R8-2(200.66mm,36.589mm) on Multi-Layer And Pad C20-1(245.618mm,63.068mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net NetC20_2 Between Pad C21-1(236.093mm,47.955mm) on Multi-Layer And Pad C20-2(245.618mm,70.79mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net VDCLINK Between Pad C2-1(79.959mm,111.934mm) on Multi-Layer And Pad D2-2(128.651mm,108.308mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net VDCLINK Between Pad RT1-2(67.437mm,109.093mm) on Multi-Layer And Pad C2-1(79.959mm,111.934mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net GND Between Pad C21-2(236.093mm,55.677mm) on Multi-Layer And Pad D10-1(237.744mm,34.595mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net GND Between Pad C21-2(236.093mm,55.677mm) on Multi-Layer And Pad U3-2(241.173mm,67.691mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net PGND Between Pad C2-2(79.959mm,101.934mm) on Multi-Layer And Pad C26-1(81.788mm,75.402mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net VCC_ISO Between Pad C22-1(175.478mm,46.736mm) on Top Layer And Pad C23-1(175.478mm,52.578mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net VCC_ISO Between Pad C22-1(175.478mm,46.736mm) on Top Layer And Pad U6-5(197.022mm,32.766mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net GND_ISO Between Pad C22-2(173.488mm,46.736mm) on Top Layer And Pad C23-2(173.488mm,52.578mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net GND_ISO Between Pad C22-2(173.488mm,46.736mm) on Top Layer And Pad U6-8(197.022mm,36.576mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net VCC_ISO Between Pad U4-4(99.568mm,90.678mm) on Multi-Layer And Pad C23-1(175.478mm,52.578mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net GND_ISO Between Pad T1-1(160.401mm,97.724mm) on Multi-Layer And Pad C23-2(173.488mm,52.578mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net VCC_LR Between Pad U6-1(191.598mm,36.576mm) on Top Layer And Pad C24-2(270.891mm,34.792mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net VCC Between Pad C26-2(81.788mm,73.412mm) on Top Layer And Pad C25-1(89.421mm,68.65mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net VCC Between Pad C25-1(89.421mm,68.65mm) on Multi-Layer And Pad R33-1(124.714mm,62.169mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net PGND Between Pad D8-2(77.597mm,67.056mm) on Top Layer And Pad C25-2(91.947mm,68.65mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net PGND Between Pad C25-2(91.947mm,68.65mm) on Multi-Layer And Pad U4-1(99.568mm,83.058mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net PGND Between Pad C25-2(91.947mm,68.65mm) on Multi-Layer And Pad U5-2(116.586mm,54.229mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net PGND Between Pad D8-2(77.597mm,67.056mm) on Top Layer And Pad C26-1(81.788mm,75.402mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net VCC Between Pad R18-2(69.403mm,67.437mm) on Top Layer And Pad C26-2(81.788mm,73.412mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net GND Between Pad C27-1(67.945mm,72.514mm) on Top Layer And Pad R29-2(207.264mm,65.405mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net 20V Between Pad C27-2(67.945mm,75.314mm) on Top Layer And Pad Q3-2(231.893mm,84.588mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net 20V Between Pad R21-1(62.672mm,67.437mm) on Top Layer And Pad C27-2(67.945mm,75.314mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net GND Between Pad D10-1(237.744mm,34.595mm) on Top Layer And Pad C28-1(260.731mm,32.382mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net NetC28_2 Between Pad D10-2(237.744mm,31.445mm) on Top Layer And Pad C28-2(260.731mm,35.182mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net Vout Between Pad C3-1(243.916mm,100.99mm) on Multi-Layer And Pad C4-1(257.251mm,101.117mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net Vout Between Pad C8-2(238.506mm,102.111mm) on Top Layer And Pad C3-1(243.916mm,100.99mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net GND Between Pad C3-2(248.844mm,100.99mm) on Multi-Layer And Pad C4-2(262.179mm,101.117mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net GND Between Pad C8-1(238.506mm,99.311mm) on Top Layer And Pad C3-2(248.844mm,100.99mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net Vout Between Pad C4-1(257.251mm,101.117mm) on Multi-Layer And Pad C5-1(257.505mm,88.036mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net Vout Between Pad C4-1(257.251mm,101.117mm) on Multi-Layer And Pad P2-2(277.114mm,98.298mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net GND Between Pad C4-2(262.179mm,101.117mm) on Multi-Layer And Pad C5-2(262.433mm,88.036mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net Vout Between Pad C5-1(257.505mm,88.036mm) on Multi-Layer And Pad R22-1(258.826mm,67.752mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net GND Between Pad C5-2(262.433mm,88.036mm) on Multi-Layer And Pad P2-1(277.114mm,93.218mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net GND Between Pad C6-1(232.918mm,99.311mm) on Top Layer And Pad C7-1(235.839mm,99.311mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net GND Between Pad R4-2(230.124mm,99.241mm) on Top Layer And Pad C6-1(232.918mm,99.311mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net Vout Between Pad C6-2(232.918mm,102.111mm) on Top Layer And Pad C7-2(235.839mm,102.111mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net Vout Between Pad R4-1(230.124mm,102.181mm) on Top Layer And Pad C6-2(232.918mm,102.111mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net GND Between Pad C7-1(235.839mm,99.311mm) on Top Layer And Pad C8-1(238.506mm,99.311mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net Vout Between Pad C7-2(235.839mm,102.111mm) on Top Layer And Pad C8-2(238.506mm,102.111mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net Vout Between Pad C8-2(238.506mm,102.111mm) on Top Layer And Pad Q3-3(238.563mm,86.868mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net PGND Between Pad C9-1(149.479mm,72.68mm) on Top Layer And Pad T1-4(160.401mm,67.724mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net NetC28_2 Between Pad Q3-1(231.893mm,89.148mm) on Top Layer And Pad D10-2(237.744mm,31.445mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net NetD1_1 Between Pad D1-1(50.673mm,108.204mm) on Multi-Layer And Pad F1-2(65.145mm,116.967mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net NetD1_2 Between Pad P3-2(35.052mm,114.935mm) on Multi-Layer And Pad D1-2(55.753mm,108.204mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net PGND Between Pad P5-2(34.417mm,100.838mm) on Multi-Layer And Pad D1-3(45.593mm,108.204mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net NetD1_4 Between Pad D1-4(60.833mm,108.204mm) on Multi-Layer And Pad RT1-1(64.897mm,104.022mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net NetD2_1 Between Pad D2-1(127.731mm,104.326mm) on Top Layer And Pad D2-1(129.571mm,104.326mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net NetD2_1 Between Pad D2-1(129.571mm,104.326mm) on Top Layer And Pad T1-2(160.401mm,87.724mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net VDCLINK Between Pad D2-2(128.651mm,108.308mm) on Top Layer And Pad Q1-2(139.192mm,133.223mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net VDCLINK Between Pad D2-2(128.651mm,108.308mm) on Top Layer And Pad R14-1(135.194mm,44.958mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net NetD3_1 Between Pad D3-1(213.36mm,119.614mm) on Multi-Layer And Pad R1-2(217.538mm,106.934mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net Vout Between Pad R38-1(115.25mm,105.41mm) on Top Layer And Pad D3-2(208.28mm,119.614mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net PGND Between Pad D4-1(136.621mm,99.373mm) on Top Layer And Pad D4-1(138.461mm,99.373mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net GND_ISO Between Pad D4-2(137.541mm,103.355mm) on Top Layer And Pad Q1-3(141.732mm,133.223mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net GND_ISO Between Pad D4-2(137.541mm,103.355mm) on Top Layer And Pad T1-1(160.401mm,97.724mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net GND_ISO Between Pad U4-3(99.568mm,88.138mm) on Multi-Layer And Pad D4-2(137.541mm,103.355mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net NetD5_1 Between Pad D5-1(149.352mm,81.948mm) on Top Layer And Pad T1-3(160.401mm,77.724mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net NetD5_2 Between Pad R9-1(144.084mm,81.915mm) on Top Layer And Pad D5-2(149.352mm,79.088mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net NetD6_1 Between Pad R26-2(215.646mm,65.979mm) on Top Layer And Pad D6-1(229.677mm,86.614mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net GND Between Pad R5-2(227.33mm,99.368mm) on Top Layer And Pad D6-2(227.777mm,86.614mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net GND Between Pad T1-6(206.301mm,86.224mm) on Multi-Layer And Pad D6-2(227.777mm,86.614mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net GND Between Pad D6-2(227.777mm,86.614mm) on Top Layer And Pad U3-2(241.173mm,67.691mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net GND_ISO Between Pad T1-1(160.401mm,97.724mm) on Multi-Layer And Pad D7-1(278.892mm,112.446mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net GATE_T Between Pad R31-1(263.144mm,65.598mm) on Top Layer And Pad D7-2(278.892mm,109.296mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net NetD8_1 Between Pad D8-1(79.497mm,67.056mm) on Top Layer And Pad R33-2(124.714mm,64.069mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net SRC_B Between Pad R37-2(243.205mm,34.478mm) on Top Layer And Pad D9-1(266.7mm,34.595mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net GATE_B Between Pad R36-1(252.918mm,29.464mm) on Top Layer And Pad D9-2(266.7mm,31.445mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net NetF1_1 Between Pad P3-1(35.052mm,109.855mm) on Multi-Layer And Pad F1-1(42.545mm,116.967mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net VDCLINK Between Pad P1-1(34.036mm,66.675mm) on Multi-Layer And Pad RT1-2(67.437mm,109.093mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net PGND Between Pad P1-2(34.036mm,71.755mm) on Multi-Layer And Pad P4-2(34.544mm,86.487mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net GND Between Pad P2-1(277.114mm,93.218mm) on Multi-Layer And Pad R30-2(288.798mm,80.198mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net VCC Between Pad P4-1(34.544mm,81.407mm) on Multi-Layer And Pad U1-7(62.771mm,77.724mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net PGND Between Pad P5-2(34.417mm,100.838mm) on Multi-Layer And Pad P4-2(34.544mm,86.487mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net PWM Between Pad P5-1(34.417mm,95.758mm) on Multi-Layer And Pad R17-2(68.834mm,80.833mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net GATE_T Between Pad Q1-1(136.652mm,133.223mm) on Multi-Layer And Pad Q2-1(137.922mm,62.738mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net GATE_T Between Pad Q2-1(137.922mm,62.738mm) on Multi-Layer And Pad R31-1(263.144mm,65.598mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net GATE_T Between Pad R32-1(124.968mm,66.995mm) on Top Layer And Pad Q2-1(137.922mm,62.738mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net NetD2_1 Between Pad Q2-2(137.922mm,65.278mm) on Multi-Layer And Pad T1-2(160.401mm,87.724mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net ISENSE_Power Between Pad Q2-3(137.922mm,67.818mm) on Multi-Layer And Pad R10-2(226.368mm,91.44mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net ISENSE_Power Between Pad R12-2(134.928mm,54.229mm) on Top Layer And Pad Q2-3(137.922mm,67.818mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net ISENSE_Power Between Pad R20-1(51.943mm,71.694mm) on Top Layer And Pad Q2-3(137.922mm,67.818mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net NetC28_2 Between Pad R38-2(113.35mm,105.41mm) on Top Layer And Pad Q3-1(231.893mm,89.148mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net Vout Between Pad R26-1(215.646mm,67.879mm) on Top Layer And Pad Q3-3(238.563mm,86.868mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net P_GND Between Pad R12-1(137.868mm,54.229mm) on Top Layer And Pad R10-1(229.308mm,91.44mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net P_GND Between Pad R11-1(133.785mm,50.165mm) on Top Layer And Pad R12-1(137.868mm,54.229mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net ISENSE_Power Between Pad R12-2(134.928mm,54.229mm) on Top Layer And Pad R11-2(136.725mm,50.165mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net ISENSE_Power Between Pad R11-2(136.725mm,50.165mm) on Top Layer And Pad R13-2(142.948mm,47.371mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net NetD3_1 Between Pad T1-5(206.301mm,97.824mm) on Multi-Layer And Pad R1-2(217.538mm,106.934mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net P_GND Between Pad R12-1(137.868mm,54.229mm) on Top Layer And Pad R13-1(140.008mm,47.371mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net VDCLINK Between Pad R14-1(135.194mm,44.958mm) on Top Layer And Pad R8-1(200.66mm,26.403mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net NetR14_2 Between Pad R16-1(50.038mm,77.79mm) on Top Layer And Pad R14-2(137.094mm,44.958mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net VFB Between Pad U1-2(54.831mm,77.724mm) on Multi-Layer And Pad R15-1(66.675mm,80.833mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net NetC13_2 Between Pad U1-1(54.831mm,80.264mm) on Multi-Layer And Pad R15-2(66.675mm,78.933mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net NetR16_2 Between Pad R16-2(50.038mm,79.69mm) on Top Layer And Pad R18-1(67.503mm,67.437mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net NetR17_1 Between Pad U1-6(62.771mm,75.184mm) on Multi-Layer And Pad R17-1(68.834mm,78.933mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net PWM Between Pad R17-2(68.834mm,80.833mm) on Top Layer And Pad U7-2(182.835mm,35.306mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net VCC Between Pad U1-7(62.771mm,77.724mm) on Multi-Layer And Pad R18-2(69.403mm,67.437mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net VREF Between Pad U1-8(62.771mm,80.264mm) on Multi-Layer And Pad R19-2(70.993mm,78.933mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net VREF Between Pad R19-2(70.993mm,78.933mm) on Top Layer And Pad U2-4(224.409mm,63.881mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net ISENSE Between Pad R20-2(51.943mm,73.594mm) on Top Layer And Pad U1-3(54.831mm,75.184mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net NetR21_2 Between Pad R21-2(60.772mm,67.437mm) on Top Layer And Pad U2-1(231.939mm,63.881mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net Vout Between Pad R22-1(258.826mm,67.752mm) on Top Layer And Pad R23-1(271.653mm,67.884mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net NetC17_1 Between Pad R22-2(258.826mm,65.852mm) on Top Layer And Pad R23-2(271.653mm,69.784mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net NetC17_1 Between Pad U3-1(240.208mm,65.659mm) on Top Layer And Pad R22-2(258.826mm,65.852mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net NetC17_1 Between Pad R23-2(271.653mm,69.784mm) on Top Layer And Pad R30-1(288.798mm,78.298mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net NetR21_2 Between Pad U2-1(231.939mm,63.881mm) on Multi-Layer And Pad R24-1(277.495mm,67.884mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net NetC17_2 Between Pad R24-2(277.495mm,69.784mm) on Top Layer And Pad R27-1(279.08mm,106.68mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net NetC17_2 Between Pad U3-3(242.138mm,65.659mm) on Top Layer And Pad R24-2(277.495mm,69.784mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net NetC19_1 Between Pad U2-3(224.409mm,66.421mm) on Multi-Layer And Pad R28-1(248.92mm,66.233mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net NetC17_1 Between Pad R29-1(207.264mm,62.865mm) on Multi-Layer And Pad U3-1(240.208mm,65.659mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net GND Between Pad T1-6(206.301mm,86.224mm) on Multi-Layer And Pad R29-2(207.264mm,65.405mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net NetR31_2 Between Pad U6-7(197.022mm,35.306mm) on Top Layer And Pad R31-2(263.144mm,67.498mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net GATE_T Between Pad R34-1(81.915mm,68.514mm) on Top Layer And Pad R32-1(124.968mm,66.995mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net NetR32_2 Between Pad R32-2(124.968mm,68.895mm) on Top Layer And Pad U6-6(197.022mm,34.036mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net VCC Between Pad U5-1(113.046mm,43.284mm) on Top Layer And Pad R33-1(124.714mm,62.169mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net GND_ISO Between Pad R34-2(81.915mm,66.614mm) on Top Layer And Pad U4-3(99.568mm,88.138mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net GATE_B Between Pad R35-1(249.047mm,32.578mm) on Top Layer And Pad R36-1(252.918mm,29.464mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net GATE_B Between Pad R37-1(243.205mm,32.578mm) on Top Layer And Pad R35-1(249.047mm,32.578mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net NetR35_2 Between Pad U7-7(188.259mm,35.306mm) on Top Layer And Pad R35-2(249.047mm,34.478mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net NetR36_2 Between Pad U7-6(188.259mm,34.036mm) on Top Layer And Pad R36-2(251.018mm,29.464mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net Vout Between Pad R5-1(227.33mm,102.308mm) on Top Layer And Pad R4-1(230.124mm,102.181mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net GND Between Pad R5-2(227.33mm,99.368mm) on Top Layer And Pad R4-2(230.124mm,99.241mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net Vout Between Pad R6-1(224.663mm,102.435mm) on Top Layer And Pad R5-1(227.33mm,102.308mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net GND Between Pad R6-2(224.663mm,99.495mm) on Top Layer And Pad R5-2(227.33mm,99.368mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net PGND Between Pad U6-3(191.598mm,34.036mm) on Top Layer And Pad R8-2(200.66mm,36.589mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net PGND Between Pad T1-4(160.401mm,67.724mm) on Multi-Layer And Pad U7-3(182.835mm,34.036mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net NetC17_2 Between Pad U2-2(231.939mm,66.421mm) on Multi-Layer And Pad U3-3(242.138mm,65.659mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net VCC_LR Between Pad U4-2(99.568mm,85.598mm) on Multi-Layer And Pad U5-3(118.126mm,43.284mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net PGND Between Pad U5-2(115.586mm,43.284mm) on Top Layer And Pad U5-2(116.586mm,54.229mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net VCC_LR Between Pad U5-3(118.126mm,43.284mm) on Top Layer And Pad U7-1(182.835mm,36.576mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net VCC_LR Between Pad U7-1(182.835mm,36.576mm) on Top Layer And Pad U6-1(191.598mm,36.576mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net VCC_LR Between Pad U7-5(188.259mm,32.766mm) on Top Layer And Pad U6-1(191.598mm,36.576mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net PWM Between Pad U7-2(182.835mm,35.306mm) on Top Layer And Pad U6-2(191.598mm,35.306mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net PGND Between Pad U6-4(191.598mm,32.766mm) on Top Layer And Pad U6-3(191.598mm,34.036mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net PGND Between Pad U7-8(188.259mm,36.576mm) on Top Layer And Pad U6-3(191.598mm,34.036mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net PGND Between Pad U7-4(182.835mm,32.766mm) on Top Layer And Pad U7-3(182.835mm,34.036mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net PGND Between Pad U7-3(182.835mm,34.036mm) on Top Layer And Pad U7-8(188.259mm,36.576mm) on Top Layer 
-Rule Violations :173
+   Violation between Un-Routed Net Constraint: Net VDCLINK Between Pad + DC Link -1-1(27.178mm,105.156mm) on Multi-Layer And Pad R2-1(57.163mm,104.902mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net PGND Between Pad + DC Link -1-2(27.178mm,100.156mm) on Multi-Layer And Pad + VCC -1-2(27.29mm,86.146mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad + Output -1-1(253.278mm,92.568mm) on Multi-Layer And Pad C11-1(296.037mm,71.306mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad R28-2(230.886mm,102.743mm) on Multi-Layer And Pad + Output -1-1(253.278mm,92.568mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad + Output -1-1(253.278mm,92.568mm) on Multi-Layer And Pad T1-6(262.943mm,142.104mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net Vout Between Pad + Output -1-2(258.278mm,92.568mm) on Multi-Layer And Pad C11-2(296.037mm,98.806mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net Vout Between Pad R24-1(230.378mm,83.566mm) on Top Layer And Pad + Output -1-2(258.278mm,92.568mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net VCC Between Pad + VCC -1-1(27.29mm,91.146mm) on Multi-Layer And Pad R31-1(45.593mm,89.596mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net PGND Between Pad + VCC -1-2(27.29mm,86.146mm) on Multi-Layer And Pad D8-2(48.133mm,87.696mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net PGND Between Pad PWM-GND -2(23.749mm,76.2mm) on Multi-Layer And Pad + VCC -1-2(27.29mm,86.146mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net NetAC Input1_1 Between Pad AC Input-1(27.178mm,119.173mm) on Multi-Layer And Pad F1-1(42.164mm,117.856mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net NetAC Input1_2 Between Pad AC Input-2(27.178mm,114.173mm) on Multi-Layer And Pad D1-2(52.578mm,109.22mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad C9-1(214.884mm,82.674mm) on Top Layer And Pad C10-1(217.551mm,82.674mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad C10-1(217.551mm,82.674mm) on Top Layer And Pad R29-2(224.536mm,85.913mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad C10-1(217.551mm,82.674mm) on Top Layer And Pad R3-2(217.551mm,82.731mm) on Bottom Layer 
+   Violation between Un-Routed Net Constraint: Net Vout Between Pad C9-2(214.884mm,85.474mm) on Top Layer And Pad C10-2(217.551mm,85.474mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net Vout Between Pad C10-2(217.551mm,85.474mm) on Top Layer And Pad R21-1(220.472mm,85.913mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net Vout Between Pad C10-2(217.551mm,85.474mm) on Top Layer And Pad R3-1(217.551mm,85.671mm) on Bottom Layer 
+   Violation between Un-Routed Net Constraint: Net Vout Between Pad C1-1(175.26mm,105.359mm) on Multi-Layer And Pad D3-2(193.04mm,104.12mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net NetC1_2 Between Pad R1-1(170.942mm,114.44mm) on Multi-Layer And Pad C1-2(175.26mm,113.081mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net PGND Between Pad C15-2(155.59mm,60.325mm) on Multi-Layer And Pad C12-1(155.992mm,65.024mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net PGND Between Pad C12-1(155.992mm,65.024mm) on Top Layer And Pad D4-1(168.908mm,78.74mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net PGND Between Pad U8-3(92.714mm,64.008mm) on Top Layer And Pad C12-1(155.992mm,65.024mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net VCC Between Pad C12-2(157.982mm,65.024mm) on Top Layer And Pad C15-1(158.115mm,60.325mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net VCC Between Pad R6-2(157.922mm,67.056mm) on Top Layer And Pad C12-2(157.982mm,65.024mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net VCC Between Pad C13-1(47.06mm,96.132mm) on Multi-Layer And Pad R10-2(59.248mm,97.409mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net VCC Between Pad R31-1(45.593mm,89.596mm) on Top Layer And Pad C13-1(47.06mm,96.132mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net PGND Between Pad C13-2(47.06mm,93.606mm) on Multi-Layer And Pad D8-2(48.133mm,87.696mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net PGND Between Pad R2-2(46.977mm,104.902mm) on Multi-Layer And Pad C13-2(47.06mm,93.606mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net PGND Between Pad U1-5(63.533mm,87.122mm) on Multi-Layer And Pad C14-1(66.421mm,88.682mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net VCC Between Pad C29-2(64.77mm,72.015mm) on Top Layer And Pad C14-2(66.421mm,90.672mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net VCC Between Pad U1-7(63.533mm,92.202mm) on Multi-Layer And Pad C14-2(66.421mm,90.672mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net VFB Between Pad C16-1(51.181mm,93.218mm) on Top Layer And Pad R8-1(53.34mm,93.468mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetC16_2 Between Pad C16-2(51.181mm,95.208mm) on Top Layer And Pad R8-2(53.34mm,95.368mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad C17-1(202.692mm,77.685mm) on Top Layer And Pad C8-1(211.963mm,82.674mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad D6-1(191.897mm,79.219mm) on Top Layer And Pad C17-1(202.692mm,77.685mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad C17-1(202.692mm,77.685mm) on Top Layer And Pad U5-2(207.01mm,67.793mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net 20V Between Pad Q3-2(199.892mm,76.007mm) on Top Layer And Pad C17-2(202.692mm,75.695mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net 20V Between Pad C17-2(202.692mm,75.695mm) on Top Layer And Pad R18-1(203.708mm,69.276mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad C18-1(188.976mm,78.069mm) on Top Layer And Pad D6-1(191.897mm,79.219mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetC18_2 Between Pad C18-2(188.976mm,76.079mm) on Top Layer And Pad D6-2(191.897mm,74.959mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetC18_2 Between Pad C18-2(188.976mm,76.079mm) on Top Layer And Pad R9-2(189.804mm,81.28mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net PGND Between Pad C20-1(63.585mm,84.709mm) on Top Layer And Pad C19-1(63.718mm,82.423mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net PGND Between Pad C19-1(63.718mm,82.423mm) on Top Layer And Pad C29-1(64.77mm,74.005mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net PGND Between Pad C19-1(63.718mm,82.423mm) on Top Layer And Pad U4-2(74.676mm,81.661mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetC19_2 Between Pad R12-1(57.47mm,84.709mm) on Top Layer And Pad C19-2(61.728mm,82.423mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net PGND Between Pad U1-5(63.533mm,87.122mm) on Multi-Layer And Pad C20-1(63.585mm,84.709mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net VREF Between Pad R12-2(59.37mm,84.709mm) on Top Layer And Pad C20-2(61.595mm,84.709mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net VREF Between Pad C20-2(61.595mm,84.709mm) on Top Layer And Pad U1-8(63.533mm,94.742mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net VREF Between Pad C20-2(61.595mm,84.709mm) on Top Layer And Pad U3-4(188.558mm,66.294mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net PGND Between Pad C2-1(94.107mm,125.476mm) on Multi-Layer And Pad C3-1(102.489mm,125.476mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net PGND Between Pad C4-2(77.927mm,106.506mm) on Multi-Layer And Pad C2-1(94.107mm,125.476mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net PGND Between Pad D8-2(48.133mm,87.696mm) on Top Layer And Pad C21-1(50.927mm,88.434mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net PGND Between Pad C21-1(50.927mm,88.434mm) on Top Layer And Pad U1-5(63.533mm,87.122mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net ISENSE Between Pad C21-2(50.927mm,90.424mm) on Top Layer And Pad R17-2(53.213mm,90.174mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net VDCLINK Between Pad C2-2(94.107mm,103.101mm) on Multi-Layer And Pad C3-2(102.489mm,103.101mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net VDCLINK Between Pad C4-1(77.927mm,116.506mm) on Multi-Layer And Pad C2-2(94.107mm,103.101mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net NetC22_1 Between Pad C23-1(100.838mm,96.393mm) on Top Layer And Pad C22-1(100.874mm,94.234mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetC22_1 Between Pad C22-1(100.874mm,94.234mm) on Top Layer And Pad C30-2(102.114mm,85.471mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetC22_1 Between Pad U2-6(82.931mm,94.234mm) on Multi-Layer And Pad C22-1(100.874mm,94.234mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net VCC_ISO_T Between Pad C23-2(102.828mm,96.393mm) on Top Layer And Pad C22-2(102.864mm,94.234mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net VCC_ISO_T Between Pad C22-2(102.864mm,94.234mm) on Top Layer And Pad U7-6(103.501mm,90.805mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetC22_1 Between Pad C23-1(100.838mm,96.393mm) on Top Layer And Pad R19-1(100.904mm,98.552mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net VCC_ISO_T Between Pad R19-2(102.804mm,98.552mm) on Top Layer And Pad C23-2(102.828mm,96.393mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net VCC_ISO_T Between Pad U2-7(82.931mm,96.774mm) on Multi-Layer And Pad C23-2(102.828mm,96.393mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetC24_1 Between Pad C24-1(199.517mm,69.469mm) on Top Layer And Pad C26-1(201.676mm,69.433mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetC24_2 Between Pad C24-2(199.517mm,67.479mm) on Top Layer And Pad R26-1(199.776mm,65.532mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetC24_2 Between Pad U3-2(196.088mm,68.834mm) on Multi-Layer And Pad C24-2(199.517mm,67.479mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net PGND Between Pad C29-1(64.77mm,74.005mm) on Top Layer And Pad C25-1(67.056mm,74.132mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net PGND Between Pad C25-1(67.056mm,74.132mm) on Top Layer And Pad U4-2(73.676mm,70.716mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net VCC_LR Between Pad C25-2(67.056mm,72.142mm) on Top Layer And Pad U4-3(76.216mm,70.716mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetC24_1 Between Pad C26-1(201.676mm,69.433mm) on Top Layer And Pad U5-1(207.01mm,69.088mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net NetC26_2 Between Pad R26-2(201.676mm,65.532mm) on Top Layer And Pad C26-2(201.676mm,67.443mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net VCC Between Pad C27-1(60.833mm,71.77mm) on Multi-Layer And Pad C29-2(64.77mm,72.015mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net PGND Between Pad C27-2(60.833mm,74.295mm) on Multi-Layer And Pad C29-1(64.77mm,74.005mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND_ISO_T Between Pad C28-1(104.104mm,83.312mm) on Top Layer And Pad C30-1(104.104mm,85.471mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND_ISO_T Between Pad C28-1(104.104mm,83.312mm) on Top Layer And Pad R25-1(104.135mm,81.153mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetC22_1 Between Pad C28-2(102.114mm,83.312mm) on Top Layer And Pad C30-2(102.114mm,85.471mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetC22_1 Between Pad C28-2(102.114mm,83.312mm) on Top Layer And Pad R25-2(102.235mm,81.153mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net VCC Between Pad C29-2(64.77mm,72.015mm) on Top Layer And Pad U4-1(71.136mm,70.716mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND_ISO_T Between Pad U7-4(103.501mm,88.265mm) on Top Layer And Pad C30-1(104.104mm,85.471mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetC31_1 Between Pad R27-1(184.023mm,68.641mm) on Top Layer And Pad C31-1(186.309mm,68.671mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetC31_1 Between Pad C31-1(186.309mm,68.671mm) on Top Layer And Pad U3-3(188.558mm,68.834mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net PGND Between Pad C31-2(186.309mm,66.681mm) on Top Layer And Pad C32-1(186.766mm,60.198mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net PGND Between Pad R27-2(184.023mm,66.741mm) on Top Layer And Pad C31-2(186.309mm,66.681mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net PGND Between Pad C31-2(186.309mm,66.681mm) on Top Layer And Pad T1-4(217.043mm,123.604mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net VDCLINK Between Pad C3-2(102.489mm,103.101mm) on Multi-Layer And Pad Q1-2(128.016mm,109.855mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net NetC32_2 Between Pad C33-1(186.893mm,56.388mm) on Multi-Layer And Pad C32-2(194.488mm,60.198mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad C33-2(194.615mm,56.388mm) on Multi-Layer And Pad U5-2(207.01mm,67.793mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net NetC34_1 Between Pad C35-1(102.271mm,71.247mm) on Top Layer And Pad C34-1(102.277mm,73.279mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net VCC_ISO_B Between Pad C35-2(104.261mm,71.247mm) on Top Layer And Pad C34-2(104.267mm,73.279mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetC34_1 Between Pad C35-1(102.271mm,71.247mm) on Top Layer And Pad R30-1(102.301mm,69.215mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net VCC_ISO_B Between Pad R30-2(104.201mm,69.215mm) on Top Layer And Pad C35-2(104.261mm,71.247mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND_ISO_B Between Pad C36-1(104.098mm,58.801mm) on Top Layer And Pad C37-1(104.104mm,60.833mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND_ISO_B Between Pad R32-1(103.947mm,56.769mm) on Top Layer And Pad C36-1(104.098mm,58.801mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetC34_1 Between Pad C36-2(102.108mm,58.801mm) on Top Layer And Pad C37-2(102.114mm,60.833mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetC34_1 Between Pad R32-2(102.047mm,56.769mm) on Top Layer And Pad C36-2(102.108mm,58.801mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND_ISO_B Between Pad U8-4(103.374mm,64.008mm) on Top Layer And Pad C37-1(104.104mm,60.833mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetC34_1 Between Pad C37-2(102.114mm,60.833mm) on Top Layer And Pad R30-1(102.301mm,69.215mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetC34_1 Between Pad U6-6(88.265mm,62.992mm) on Multi-Layer And Pad C37-2(102.114mm,60.833mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net VDCLINK Between Pad RT1-2(64.135mm,110.365mm) on Multi-Layer And Pad C4-1(77.927mm,116.506mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net PGND Between Pad C4-2(77.927mm,106.506mm) on Multi-Layer And Pad U2-2(82.931mm,84.074mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net Vout Between Pad C5-1(191.643mm,91.567mm) on Multi-Layer And Pad C7-1(204.597mm,91.567mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net Vout Between Pad C5-1(191.643mm,91.567mm) on Multi-Layer And Pad D3-2(193.04mm,104.12mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net Vout Between Pad C5-1(191.643mm,91.567mm) on Multi-Layer And Pad R9-1(191.704mm,81.28mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad C5-2(191.643mm,96.495mm) on Multi-Layer And Pad C7-2(204.597mm,96.495mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net Vout Between Pad C7-1(204.597mm,91.567mm) on Multi-Layer And Pad C6-1(217.145mm,91.567mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net Vout Between Pad C6-1(217.145mm,91.567mm) on Multi-Layer And Pad R3-1(217.551mm,85.671mm) on Bottom Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad C7-2(204.597mm,96.495mm) on Multi-Layer And Pad C6-2(217.145mm,96.495mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad C6-2(217.145mm,96.495mm) on Multi-Layer And Pad R28-2(230.886mm,102.743mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad C6-2(217.145mm,96.495mm) on Multi-Layer And Pad R3-2(217.551mm,82.731mm) on Bottom Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad C8-1(211.963mm,82.674mm) on Top Layer And Pad R5-2(212.09mm,82.731mm) on Bottom Layer 
+   Violation between Un-Routed Net Constraint: Net Vout Between Pad C8-2(211.963mm,85.474mm) on Top Layer And Pad R5-1(212.09mm,85.671mm) on Bottom Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad R4-2(214.757mm,82.731mm) on Bottom Layer And Pad C9-1(214.884mm,82.674mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net Vout Between Pad R4-1(214.757mm,85.671mm) on Bottom Layer And Pad C9-2(214.884mm,85.474mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND_ISO_B Between Pad R36-2(108.458mm,63.886mm) on Top Layer And Pad D10-1(111.252mm,62.767mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GATE_B Between Pad R36-1(108.458mm,65.786mm) on Top Layer And Pad D10-2(111.252mm,67.027mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetD1_1 Between Pad D1-1(47.498mm,109.22mm) on Multi-Layer And Pad F1-2(64.764mm,117.856mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net PGND Between Pad D1-3(42.418mm,109.22mm) on Multi-Layer And Pad R2-2(46.977mm,104.902mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net NetD1_4 Between Pad D1-4(57.658mm,109.22mm) on Multi-Layer And Pad RT1-1(61.595mm,105.293mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net NetD2_1 Between Pad Q2-2(107.95mm,51.181mm) on Multi-Layer And Pad D2-1(161.162mm,86.488mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetD2_1 Between Pad D2-1(161.162mm,86.488mm) on Top Layer And Pad T1-2(217.043mm,143.604mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net VDCLINK Between Pad D2-2(156.592mm,86.488mm) on Top Layer And Pad D2-2(158.877mm,92.923mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net VDCLINK Between Pad Q1-2(128.016mm,109.855mm) on Multi-Layer And Pad D2-2(158.877mm,92.923mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetD3_1 Between Pad R1-2(170.942mm,104.254mm) on Multi-Layer And Pad D3-1(198.12mm,104.12mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net NetD3_1 Between Pad D3-1(198.12mm,104.12mm) on Multi-Layer And Pad T1-5(262.943mm,153.704mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net PGND Between Pad D4-1(168.908mm,78.74mm) on Top Layer And Pad R27-2(184.023mm,66.741mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND_ISO_T Between Pad D4-2(164.338mm,78.74mm) on Top Layer And Pad D4-2(166.623mm,85.175mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND_ISO_T Between Pad Q1-3(130.556mm,109.855mm) on Multi-Layer And Pad D4-2(166.623mm,85.175mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND_ISO_T Between Pad D4-2(166.623mm,85.175mm) on Top Layer And Pad T1-1(217.043mm,153.604mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net NetD5_1 Between Pad D5-1(159.834mm,71.216mm) on Top Layer And Pad D5-1(159.834mm,73.056mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetD5_1 Between Pad D5-1(159.834mm,73.056mm) on Top Layer And Pad T1-3(217.043mm,133.604mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net NetD5_2 Between Pad D5-2(155.852mm,72.136mm) on Top Layer And Pad R6-1(156.022mm,67.056mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetC18_2 Between Pad D6-2(191.897mm,74.959mm) on Top Layer And Pad Q3-1(195.332mm,76.007mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetD7_1 Between Pad D7-1(232.217mm,81.026mm) on Top Layer And Pad R24-2(232.278mm,83.566mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad R29-2(224.536mm,85.913mm) on Top Layer And Pad D7-2(230.317mm,81.026mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetD8_1 Between Pad R31-2(45.593mm,87.696mm) on Top Layer And Pad D8-1(48.133mm,89.596mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND_ISO_T Between Pad D9-1(111.125mm,89.437mm) on Top Layer And Pad Q1-3(130.556mm,109.855mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net GND_ISO_T Between Pad R34-2(108.458mm,91.445mm) on Top Layer And Pad D9-1(111.125mm,89.437mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GATE_T Between Pad D9-2(111.125mm,93.697mm) on Top Layer And Pad Q1-1(125.476mm,109.855mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net GATE_T Between Pad Q2-1(110.49mm,51.181mm) on Multi-Layer And Pad D9-2(111.125mm,93.697mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GATE_T Between Pad R34-1(108.458mm,93.345mm) on Top Layer And Pad D9-2(111.125mm,93.697mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net PWM Between Pad PWM-GND -1(23.749mm,78.74mm) on Multi-Layer And Pad R11-2(50.993mm,86.233mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND_ISO_B Between Pad Q2-3(105.41mm,51.181mm) on Multi-Layer And Pad R14-2(131.318mm,48.237mm) on Bottom Layer 
+   Violation between Un-Routed Net Constraint: Net GND_ISO_B Between Pad R32-1(103.947mm,56.769mm) on Top Layer And Pad Q2-3(105.41mm,51.181mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net Vout Between Pad R9-1(191.704mm,81.28mm) on Top Layer And Pad Q3-3(197.612mm,82.677mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetR7_2 Between Pad R10-1(61.148mm,97.409mm) on Top Layer And Pad R7-2(61.148mm,99.441mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net VCC Between Pad R10-2(59.248mm,97.409mm) on Top Layer And Pad U1-7(63.533mm,92.202mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net NetR11_1 Between Pad R11-1(52.893mm,86.233mm) on Top Layer And Pad U1-6(63.533mm,89.662mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net PWM Between Pad R11-2(50.993mm,86.233mm) on Top Layer And Pad U7-1(92.841mm,90.805mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetC19_2 Between Pad U1-4(55.593mm,87.122mm) on Multi-Layer And Pad R12-1(57.47mm,84.709mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net P_GND Between Pad R16-1(139.319mm,54.633mm) on Bottom Layer And Pad R13-1(143.002mm,54.76mm) on Bottom Layer 
+   Violation between Un-Routed Net Constraint: Net GND_ISO_B Between Pad R16-2(139.319mm,47.983mm) on Bottom Layer And Pad R13-2(143.002mm,48.11mm) on Bottom Layer 
+   Violation between Un-Routed Net Constraint: Net P_GND Between Pad R14-1(131.318mm,54.887mm) on Bottom Layer And Pad R15-1(135.509mm,54.633mm) on Bottom Layer 
+   Violation between Un-Routed Net Constraint: Net GND_ISO_B Between Pad R14-2(131.318mm,48.237mm) on Bottom Layer And Pad R15-2(135.509mm,47.983mm) on Bottom Layer 
+   Violation between Un-Routed Net Constraint: Net P_GND Between Pad R15-1(135.509mm,54.633mm) on Bottom Layer And Pad R16-1(139.319mm,54.633mm) on Bottom Layer 
+   Violation between Un-Routed Net Constraint: Net GND_ISO_B Between Pad R15-2(135.509mm,47.983mm) on Bottom Layer And Pad R16-2(139.319mm,47.983mm) on Bottom Layer 
+   Violation between Un-Routed Net Constraint: Net GND_ISO_B Between Pad R17-1(53.213mm,88.274mm) on Top Layer And Pad U6-5(88.265mm,65.532mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net ISENSE Between Pad R17-2(53.213mm,90.174mm) on Top Layer And Pad U1-3(55.593mm,89.662mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net NetR18_2 Between Pad R22-1(201.676mm,63.627mm) on Top Layer And Pad R18-2(203.708mm,67.376mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net Vout Between Pad R21-1(220.472mm,85.913mm) on Top Layer And Pad R20-1(222.504mm,85.913mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net Vout Between Pad R20-1(222.504mm,85.913mm) on Top Layer And Pad R24-1(230.378mm,83.566mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetC24_1 Between Pad R21-2(220.472mm,84.013mm) on Top Layer And Pad R20-2(222.504mm,84.013mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetC24_1 Between Pad R20-2(222.504mm,84.013mm) on Top Layer And Pad R29-1(224.536mm,84.013mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net VDCLINK Between Pad R2-1(57.163mm,104.902mm) on Multi-Layer And Pad R7-1(59.248mm,99.441mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net VDCLINK Between Pad R2-1(57.163mm,104.902mm) on Multi-Layer And Pad RT1-2(64.135mm,110.365mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net NetC24_1 Between Pad U5-1(207.01mm,69.088mm) on Multi-Layer And Pad R21-2(220.472mm,84.013mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetR18_2 Between Pad U3-1(196.088mm,66.294mm) on Multi-Layer And Pad R22-1(201.676mm,63.627mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetC24_2 Between Pad R22-2(199.776mm,63.627mm) on Top Layer And Pad R26-1(199.776mm,65.532mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net VFB Between Pad U1-2(55.593mm,92.202mm) on Multi-Layer And Pad R23-1(181.864mm,66.614mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetC31_1 Between Pad R23-2(181.864mm,68.514mm) on Top Layer And Pad R27-1(184.023mm,68.641mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetC24_2 Between Pad R26-1(199.776mm,65.532mm) on Top Layer And Pad U5-3(207.01mm,66.548mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net NetC24_1 Between Pad R29-1(224.536mm,84.013mm) on Top Layer And Pad R28-1(233.426mm,102.743mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net VCC_ISO_B Between Pad U8-6(103.374mm,66.548mm) on Top Layer And Pad R30-2(104.201mm,69.215mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GATE_T Between Pad R33-1(105.918mm,93.34mm) on Top Layer And Pad R34-1(108.458mm,93.345mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetR33_2 Between Pad U7-5(103.501mm,89.535mm) on Top Layer And Pad R33-2(105.918mm,91.44mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND_ISO_T Between Pad U7-4(103.501mm,88.265mm) on Top Layer And Pad R34-2(108.458mm,91.445mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GATE_B Between Pad R35-1(106.299mm,63.881mm) on Top Layer And Pad R36-1(108.458mm,65.786mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetR35_2 Between Pad U8-5(103.374mm,65.278mm) on Top Layer And Pad R35-2(106.299mm,65.781mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND_ISO_B Between Pad U8-4(103.374mm,64.008mm) on Top Layer And Pad R36-2(108.458mm,63.886mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net Vout Between Pad R5-1(212.09mm,85.671mm) on Bottom Layer And Pad R4-1(214.757mm,85.671mm) on Bottom Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad R5-2(212.09mm,82.731mm) on Bottom Layer And Pad R4-2(214.757mm,82.731mm) on Bottom Layer 
+   Violation between Un-Routed Net Constraint: Net VCC Between Pad U4-1(71.136mm,70.716mm) on Top Layer And Pad R6-2(157.922mm,67.056mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net VFB Between Pad R8-1(53.34mm,93.468mm) on Top Layer And Pad U1-2(55.593mm,92.202mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net NetC16_2 Between Pad R8-2(53.34mm,95.368mm) on Top Layer And Pad U1-1(55.593mm,94.742mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net VCC_LR Between Pad U2-1(82.931mm,81.534mm) on Multi-Layer And Pad U6-1(88.265mm,75.692mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net PGND Between Pad U4-2(74.676mm,81.661mm) on Top Layer And Pad U2-2(82.931mm,84.074mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net PGND Between Pad U2-2(82.931mm,84.074mm) on Multi-Layer And Pad U6-2(88.265mm,73.152mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net PGND Between Pad U2-2(82.931mm,84.074mm) on Multi-Layer And Pad U7-3(92.841mm,88.265mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND_ISO_T Between Pad U2-5(82.931mm,91.694mm) on Multi-Layer And Pad U7-4(103.501mm,88.265mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net VCC_LR Between Pad U4-3(76.216mm,70.716mm) on Top Layer And Pad U6-1(88.265mm,75.692mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net PGND Between Pad U6-2(88.265mm,73.152mm) on Multi-Layer And Pad U8-3(92.714mm,64.008mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND_ISO_B Between Pad U6-5(88.265mm,65.532mm) on Multi-Layer And Pad U8-4(103.374mm,64.008mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net VCC_ISO_B Between Pad U6-7(88.265mm,60.452mm) on Multi-Layer And Pad U8-6(103.374mm,66.548mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net PWM Between Pad U8-1(92.714mm,66.548mm) on Top Layer And Pad U7-1(92.841mm,90.805mm) on Top Layer 
+Rule Violations :195
 
 Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
 Rule Violations :0
@@ -203,22 +225,27 @@ Processing Rule : Hole To Hole Clearance (Gap=0.254mm) (All),(All)
 Rule Violations :0
 
 Processing Rule : Minimum Solder Mask Sliver (Gap=0.1mm) (All),(All)
-Rule Violations :0
+   Violation between Minimum Solder Mask Sliver Constraint: (0.063mm < 0.1mm) Between Pad D6-1(191.897mm,79.219mm) on Top Layer And Pad R9-1(191.704mm,81.28mm) on Top Layer [Top Solder] Mask Sliver [0.063mm]
+Rule Violations :1
 
 Processing Rule : Silk To Solder Mask (Clearance=0.01mm) (IsPad),(All)
-   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.01mm) Between Pad C25-1(89.421mm,68.65mm) on Multi-Layer And Text "C25" (88.923mm,68.307mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
-   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.01mm) Between Pad C27-2(67.945mm,75.314mm) on Top Layer And Text "C27" (67.164mm,75.669mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
-   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.01mm) Between Pad R10-2(226.368mm,91.44mm) on Top Layer And Text "R10" (225.956mm,91.192mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
-   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.01mm) Between Pad R29-3(207.264mm,67.945mm) on Multi-Layer And Text "R29" (206.864mm,67.414mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
-Rule Violations :4
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.01mm) Between Arc (204.521mm,69.342mm) on Top Overlay And Pad R18-1(203.708mm,69.276mm) on Top Layer [Top Overlay] to [Top Solder] clearance [0mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.01mm) Between Pad C27-1(60.833mm,71.77mm) on Multi-Layer And Text "C27" (61.176mm,71.271mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.01mm) Between Pad C7-2(204.597mm,96.495mm) on Multi-Layer And Track (195.213mm,97.308mm)(211.213mm,97.308mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.01mm) Between Pad D5-1(159.834mm,71.216mm) on Top Layer And Text "D5" (159.489mm,71.497mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.01mm) Between Pad D6-1(191.897mm,79.219mm) on Top Layer And Text "D6" (191.393mm,79.733mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.01mm) Between Pad R13-2(143.002mm,48.11mm) on Bottom Layer And Text "R13" (142.754mm,48.718mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.01mm) Between Pad R14-2(131.318mm,48.237mm) on Bottom Layer And Text "R14" (130.816mm,48.918mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.01mm) Between Pad R15-2(135.509mm,47.983mm) on Bottom Layer And Text "R15" (135.134mm,48.664mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.01mm) Between Pad R16-2(139.319mm,47.983mm) on Bottom Layer And Text "R16" (138.817mm,48.664mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.01mm) Between Pad R28-3(228.346mm,102.743mm) on Multi-Layer And Text "R28" (228.877mm,102.343mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.01mm) Between Pad T1-(252.043mm,153.604mm) on Multi-Layer And Track (0mm,154.559mm)(325.755mm,154.559mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.01mm) Between Pad T1-1(217.043mm,153.604mm) on Multi-Layer And Track (0mm,154.559mm)(325.755mm,154.559mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.01mm) Between Pad T1-5(262.943mm,153.704mm) on Multi-Layer And Track (0mm,154.559mm)(325.755mm,154.559mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
+Rule Violations :13
 
 Processing Rule : Silk to Silk (Clearance=0.1mm) (All),(All)
-   Violation between Silk To Silk Clearance Constraint: (Collision < 0.1mm) Between Arc (229.87mm,81.407mm) on Top Overlay And Text "C11" (232.133mm,81.986mm) on Top Overlay Silk Text to Silk Clearance [0mm]
-   Violation between Silk To Silk Clearance Constraint: (Collision < 0.1mm) Between Text "C11" (232.133mm,81.986mm) on Top Overlay And Track (231.134mm,83.254mm)(232.517mm,81.87mm) on Top Overlay Silk Text to Silk Clearance [0mm]
-   Violation between Silk To Silk Clearance Constraint: (Collision < 0.1mm) Between Text "C20" (244.704mm,69.164mm) on Top Overlay And Track (245.491mm,67.537mm)(245.491mm,69.037mm) on Top Overlay Silk Text to Silk Clearance [0mm]
-   Violation between Silk To Silk Clearance Constraint: (Collision < 0.1mm) Between Text "C21" (235.489mm,53.571mm) on Top Overlay And Track (235.966mm,52.424mm)(235.966mm,53.924mm) on Top Overlay Silk Text to Silk Clearance [0mm]
-   Violation between Silk To Silk Clearance Constraint: (Collision < 0.1mm) Between Text "U4" (94.005mm,91.567mm) on Top Overlay And Track (94.443mm,80.998mm)(94.443mm,92.738mm) on Top Overlay Silk Text to Silk Clearance [0mm]
-Rule Violations :5
+Rule Violations :0
 
 Processing Rule : Net Antennae (Tolerance=0mm) (All)
 Rule Violations :0
@@ -227,6 +254,6 @@ Processing Rule : Height Constraint (Min=0mm) (Max=404mm) (Prefered=12.7mm) (All
 Rule Violations :0
 
 
-Violations Detected : 184
+Violations Detected : 211
 Waived Violations : 0
-Time Elapsed        : 00:00:01
+Time Elapsed        : 00:00:02
