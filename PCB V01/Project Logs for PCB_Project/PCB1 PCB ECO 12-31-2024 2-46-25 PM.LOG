@@ -1,0 +1,269 @@
+Removed Pin From Net: NetName=VCC_ISO_T Pin=C20-1
+Removed Pin From Net: NetName=GND_ISO_T Pin=C20-2
+Removed Pin From Net: NetName=VCC_ISO_T Pin=C21-1
+Removed Pin From Net: NetName=GND_ISO_T Pin=C21-2
+Removed Pin From Net: NetName=VCC_ISO_B Pin=C29-1
+Removed Pin From Net: NetName=GND_ISO_B Pin=C29-2
+Removed Pin From Net: NetName=VCC_ISO_B Pin=C30-1
+Removed Pin From Net: NetName=GND_ISO_B Pin=C30-2
+Removed Pin From Net: NetName=PGND Pin=U2-1
+Removed Pin From Net: NetName=VCC_LR Pin=U2-2
+Removed Pin From Net: NetName=GND_ISO_T Pin=U2-3
+Removed Pin From Net: NetName=VCC_ISO_T Pin=U2-4
+Removed Pin From Net: NetName=PGND Pin=U6-1
+Removed Pin From Net: NetName=VCC_LR Pin=U6-2
+Removed Pin From Net: NetName=GND_ISO_B Pin=U6-3
+Removed Pin From Net: NetName=VCC_ISO_B Pin=U6-4
+Change Component Footprint: Designator=C14 Old Footprint=Capacitor Ceramic SMD 1206 New Footprint=Capacitor Ceramic SMD 805
+Change Component Footprint: Designator=C15 Old Footprint=Capacitor Ceramic SMD 1206 New Footprint=Capacitor Ceramic SMD 805
+Change Component Footprint: Designator=D5 Old Footprint=Diode SMD SOD-123 New Footprint=Diode SMD POWERDI5
+Change Component Footprint: Designator=U2 Old Footprint=Linear Regulator Isolated Module DC-DC DIP 01 New Footprint=Linear Regulator Isolated Module DC-DC DIP 02
+Change Component Footprint: Designator=U6 Old Footprint=Linear Regulator Isolated Module DC-DC DIP 01 New Footprint=Linear Regulator Isolated Module DC-DC DIP 02
+Change Component Footprint: Designator=+ DC Link -1 Old Footprint=Phoenix Contact 2x Male Straight New Footprint=Phoenix Contact 2x2 Male Straight
+Change Component Footprint: Designator=+ VCC -1 Old Footprint=Phoenix Contact 2x Male Straight New Footprint=Phoenix Contact 2x2 Male Straight
+Change Component Comment : Designator=D2 Old Comment=(DIGIKEY Part Number) New Comment=DSEP6-06AS-TRL
+Change Component Comment : Designator=D4 Old Comment=(DIGIKEY Part Number) New Comment=DSEP6-06AS-TRL
+Change Component Comment : Designator=D5 Old Comment=BAS21GWX New Comment=PDS3100-13
+Change Component Comment : Designator=C30 Old Comment=C0805C104J5RAC7800 New Comment=CC0805JKX7R9BB105
+Change Component Comment : Designator=U2 Old Comment=CRE1S1212SC New Comment=MGJ2 Series
+Change Component Comment : Designator=U6 Old Comment=CRE1S1212SC New Comment=MGJ2 Series
+Change Component Designator: OldDesignator=+ Output - NewDesignator=+ Output -1
+Change Component Designator: OldDesignator=C2 NewDesignator=C4
+Change Component Designator: OldDesignator=C3 NewDesignator=C5
+Change Component Designator: OldDesignator=C4 NewDesignator=C6
+Change Component Designator: OldDesignator=C5 NewDesignator=C7
+Change Component Designator: OldDesignator=C6 NewDesignator=C8
+Change Component Designator: OldDesignator=C7 NewDesignator=C9
+Change Component Designator: OldDesignator=C8 NewDesignator=C10
+Change Component Designator: OldDesignator=C9 NewDesignator=C12
+Change Component Designator: OldDesignator=C10 NewDesignator=C13
+Change Component Designator: OldDesignator=C11 NewDesignator=C14
+Change Component Designator: OldDesignator=C12 NewDesignator=C15
+Change Component Designator: OldDesignator=C13 NewDesignator=C16
+Change Component Designator: OldDesignator=C14 NewDesignator=C17
+Change Component Designator: OldDesignator=C15 NewDesignator=C18
+Change Component Designator: OldDesignator=C16 NewDesignator=C19
+Change Component Designator: OldDesignator=C17 NewDesignator=C20
+Change Component Designator: OldDesignator=C18 NewDesignator=C21
+Change Component Designator: OldDesignator=C19 NewDesignator=C24
+Change Component Designator: OldDesignator=C20 NewDesignator=C23
+Change Component Designator: OldDesignator=C21 NewDesignator=C22
+Change Component Designator: OldDesignator=C22 NewDesignator=C25
+Change Component Designator: OldDesignator=C23 NewDesignator=C26
+Change Component Designator: OldDesignator=C24 NewDesignator=C27
+Change Component Designator: OldDesignator=C25 NewDesignator=C29
+Change Component Designator: OldDesignator=C26 NewDesignator=C31
+Change Component Designator: OldDesignator=C27 NewDesignator=C32
+Change Component Designator: OldDesignator=C28 NewDesignator=C33
+Change Component Designator: OldDesignator=C? NewDesignator=C2
+Change Component Designator: OldDesignator=C? NewDesignator=C3
+Change Component Designator: OldDesignator=R19 NewDesignator=R20
+Change Component Designator: OldDesignator=R20 NewDesignator=R21
+Change Component Designator: OldDesignator=R21 NewDesignator=R22
+Change Component Designator: OldDesignator=R22 NewDesignator=R23
+Change Component Designator: OldDesignator=R23 NewDesignator=R24
+Change Component Designator: OldDesignator=R24 NewDesignator=R26
+Change Component Designator: OldDesignator=R25 NewDesignator=R27
+Change Component Designator: OldDesignator=R26 NewDesignator=R28
+Change Component Designator: OldDesignator=R27 NewDesignator=R29
+Change Component Designator: OldDesignator=R28 NewDesignator=R31
+Change Component Designator: OldDesignator=R29 NewDesignator=R33
+Change Component Designator: OldDesignator=R30 NewDesignator=R34
+Change Component Designator: OldDesignator=R31 NewDesignator=R35
+Change Component Designator: OldDesignator=R32 NewDesignator=R36
+Change component parameters: Designator = "C30" ("C30"); Footprint = "Capacitor Ceramic SMD 805"; UniqueID = "\ABGJYTCU" ("\ABGJYTCU")
+Change component parameters (AddParameter): Name = "Value"; Value = "1uF, 50V"; VariantName = "[No Variations]"
+Change component parameters: Designator = "U2" ("U2"); Footprint = "Linear Regulator Isolated Module DC-DC DIP 01"; UniqueID = "\ZZERKRMK" ("\ZZERKRMK")
+Change component parameters (AddParameter): Name = "Case/Package"; Value = "SIP"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink1Description"; Value = "http://www.farnell.com/datasheets/1965123.pdf?src-supplier=Element14"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.farnell.com/datasheets/1965123.pdf?src-supplier=Element14"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink2Description"; Value = "http://power.murata.com/data/power/ncl/kdc_mgj2.pdf?src-supplier=Avnet"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink2URL"; Value = "http://power.murata.com/data/power/ncl/kdc_mgj2.pdf?src-supplier=Avnet"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Current - Output 1"; Value = "80mA"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Current - Output 2"; Value = "40mA"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Depth"; Value = "19.65mm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Efficiency"; Value = "80%"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Features"; Value = "SCP"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Height"; Value = "0.5inch"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Isolation Voltage"; Value = "5.2kV"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Length"; Value = "0.77inch"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = "Murata"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer Part Number"; Value = "MGJ2D121505SC"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Max Input Voltage"; Value = "13.2V"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Max Input Voltage (DC)"; Value = "13.2V"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Max Operating Temperature"; Value = "100°C"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Max Output Current"; Value = "40mA"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Max Output Power"; Value = "2W"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Max Power Dissipation"; Value = "1W"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Min Input Voltage"; Value = "10.8V"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Min Input Voltage (DC)"; Value = "10.8V"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Min Operating Temperature"; Value = "-40°C"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mount"; Value = "Through Hole"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Nominal Input Voltage"; Value = "12V"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Number of Outputs"; Value = "2"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Number of Pins"; Value = "5"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Output Current"; Value = "80mA"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Output Power"; Value = "2W"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Output Voltage"; Value = "15V"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package Quantity"; Value = "25"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Packaging"; Value = "Rail/Tube"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pricing 1"; Value = "1=8.46, 5=8.42, 10=8.36, 25=8.27, 50=8.06, 100=7.66, 250=7.17, 500=6.68, 1000=6.65 (USD)"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Radiation Hardening"; Value = "No"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "REACH SVHC"; Value = "No SVHC"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "RoHS Compliant"; Value = "Yes"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Stock 1"; Value = "0"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier 1"; Value = "Mouser"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier Part Number 1"; Value = "580-MGJ2D122005SC"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Voltage - Output 1"; Value = "15V"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Voltage - Output 2"; Value = "-5V"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Weight"; Value = "0.151678oz"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Width"; Value = "0.39inch"; VariantName = "[No Variations]"
+Change component parameters: Designator = "U6" ("U6"); Footprint = "Linear Regulator Isolated Module DC-DC DIP 01"; UniqueID = "\OPHVGYQL" ("\OPHVGYQL")
+Change component parameters (AddParameter): Name = "Case/Package"; Value = "SIP"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink1Description"; Value = "http://www.farnell.com/datasheets/1965123.pdf?src-supplier=Element14"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.farnell.com/datasheets/1965123.pdf?src-supplier=Element14"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink2Description"; Value = "http://power.murata.com/data/power/ncl/kdc_mgj2.pdf?src-supplier=Avnet"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink2URL"; Value = "http://power.murata.com/data/power/ncl/kdc_mgj2.pdf?src-supplier=Avnet"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Current - Output 1"; Value = "80mA"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Current - Output 2"; Value = "40mA"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Depth"; Value = "19.65mm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Efficiency"; Value = "80%"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Features"; Value = "SCP"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Height"; Value = "0.5inch"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Isolation Voltage"; Value = "5.2kV"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Length"; Value = "0.77inch"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = "Murata"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer Part Number"; Value = "MGJ2D121505SC"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Max Input Voltage"; Value = "13.2V"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Max Input Voltage (DC)"; Value = "13.2V"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Max Operating Temperature"; Value = "100°C"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Max Output Current"; Value = "40mA"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Max Output Power"; Value = "2W"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Max Power Dissipation"; Value = "1W"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Min Input Voltage"; Value = "10.8V"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Min Input Voltage (DC)"; Value = "10.8V"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Min Operating Temperature"; Value = "-40°C"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mount"; Value = "Through Hole"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Nominal Input Voltage"; Value = "12V"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Number of Outputs"; Value = "2"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Number of Pins"; Value = "5"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Output Current"; Value = "80mA"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Output Power"; Value = "2W"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Output Voltage"; Value = "15V"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package Quantity"; Value = "25"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Packaging"; Value = "Rail/Tube"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pricing 1"; Value = "1=8.46, 5=8.42, 10=8.36, 25=8.27, 50=8.06, 100=7.66, 250=7.17, 500=6.68, 1000=6.65 (USD)"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Radiation Hardening"; Value = "No"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "REACH SVHC"; Value = "No SVHC"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "RoHS Compliant"; Value = "Yes"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Stock 1"; Value = "0"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier 1"; Value = "Mouser"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier Part Number 1"; Value = "580-MGJ2D122005SC"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Voltage - Output 1"; Value = "15V"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Voltage - Output 2"; Value = "-5V"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Weight"; Value = "0.151678oz"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Width"; Value = "0.39inch"; VariantName = "[No Variations]"
+Added Component: Designator=C11(Capacitor Film DIP 06)
+Add component (AddParameter): Name = "Value"; Value = "100nF, 50V"; VariantName = "[No Variations]"
+Added Component: Designator=C28(Capacitor Ceramic SMD 805)
+Add component (AddParameter): Name = "Value"; Value = "100nF, 50V"; VariantName = "[No Variations]"
+Added Component: Designator=C34(Capacitor Ceramic SMD 805)
+Add component (AddParameter): Name = "Value"; Value = "100nF, 50V"; VariantName = "[No Variations]"
+Added Component: Designator=C35(Capacitor Ceramic SMD 805)
+Add component (AddParameter): Name = "Value"; Value = "1uF, 50V"; VariantName = "[No Variations]"
+Added Component: Designator=C36(Capacitor Ceramic SMD 805)
+Add component (AddParameter): Name = "Value"; Value = "100nF, 50V"; VariantName = "[No Variations]"
+Added Component: Designator=C37(Capacitor Ceramic SMD 805)
+Add component (AddParameter): Name = "Value"; Value = "1uF, 50V"; VariantName = "[No Variations]"
+Added Component: Designator=R19(Resistor SMD 805)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDescription"; Value = "Axial Device, Thru-Hole; 2 Leads; 0.3 in Pin Spacing"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "AXIAL-0.3"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "1 K"; VariantName = "[No Variations]"
+Added Component: Designator=R25(Resistor SMD 805)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDescription"; Value = "Axial Device, Thru-Hole; 2 Leads; 0.3 in Pin Spacing"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "AXIAL-0.3"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "1 K"; VariantName = "[No Variations]"
+Added Component: Designator=R30(Resistor SMD 805)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDescription"; Value = "Axial Device, Thru-Hole; 2 Leads; 0.3 in Pin Spacing"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "AXIAL-0.3"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "1 K"; VariantName = "[No Variations]"
+Added Component: Designator=R32(Resistor SMD 805)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDescription"; Value = "Axial Device, Thru-Hole; 2 Leads; 0.3 in Pin Spacing"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "AXIAL-0.3"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "1 K"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=C11-1
+Added Pin To Net: NetName=Vout Pin=C11-2
+Added Pin To Net: NetName=VCC_ISO_T Pin=C22-2
+Added Pin To Net: NetName=VCC_ISO_T Pin=C23-2
+Added Pin To Net: NetName=GND_ISO_T Pin=C28-1
+Added Pin To Net: NetName=GND_ISO_T Pin=C30-1
+Added Pin To Net: NetName=VCC_ISO_B Pin=C34-2
+Added Pin To Net: NetName=VCC_ISO_B Pin=C35-2
+Added Pin To Net: NetName=GND_ISO_B Pin=C36-1
+Added Pin To Net: NetName=GND_ISO_B Pin=C37-1
+Added Pin To Net: NetName=VCC_ISO_T Pin=R19-2
+Added Pin To Net: NetName=GND_ISO_T Pin=R25-1
+Added Pin To Net: NetName=VCC_ISO_B Pin=R30-2
+Added Pin To Net: NetName=GND_ISO_B Pin=R32-1
+Added Pin To Net: NetName=VCC_LR Pin=U2-1
+Added Pin To Net: NetName=PGND Pin=U2-2
+Added Pin To Net: NetName=GND_ISO_T Pin=U2-5
+Added Pin To Net: NetName=VCC_ISO_T Pin=U2-7
+Added Pin To Net: NetName=VCC_LR Pin=U6-1
+Added Pin To Net: NetName=PGND Pin=U6-2
+Added Pin To Net: NetName=GND_ISO_B Pin=U6-5
+Added Pin To Net: NetName=VCC_ISO_B Pin=U6-7
+Change Net Name : Old Net Name=NetC13_2 New Net Name=NetC16_2
+Change Net Name : Old Net Name=NetC15_2 New Net Name=NetC18_2
+Change Net Name : Old Net Name=NetC16_2 New Net Name=NetC19_2
+Change Net Name : Old Net Name=NetC19_1 New Net Name=NetC24_1
+Change Net Name : Old Net Name=NetC19_2 New Net Name=NetC24_2
+Change Net Name : Old Net Name=NetC23_2 New Net Name=NetC26_2
+Change Net Name : Old Net Name=NetC26_1 New Net Name=NetC31_1
+Change Net Name : Old Net Name=NetC27_2 New Net Name=NetC32_2
+Change Net Name : Old Net Name=NetR29_2 New Net Name=NetR33_2
+Change Net Name : Old Net Name=NetR31_2 New Net Name=NetR35_2
+Added Pin To Net: NetName=NetC22_1 Pin=C22-1
+Added Pin To Net: NetName=NetC22_1 Pin=C23-1
+Added Pin To Net: NetName=NetC22_1 Pin=C28-2
+Added Pin To Net: NetName=NetC22_1 Pin=C30-2
+Added Pin To Net: NetName=NetC22_1 Pin=R19-1
+Added Pin To Net: NetName=NetC22_1 Pin=R25-2
+Added Pin To Net: NetName=NetC22_1 Pin=U2-6
+Added Net: Name=NetC22_1
+Added Pin To Net: NetName=NetC34_1 Pin=C34-1
+Added Pin To Net: NetName=NetC34_1 Pin=C35-1
+Added Pin To Net: NetName=NetC34_1 Pin=C36-2
+Added Pin To Net: NetName=NetC34_1 Pin=C37-2
+Added Pin To Net: NetName=NetC34_1 Pin=R30-1
+Added Pin To Net: NetName=NetC34_1 Pin=R32-2
+Added Pin To Net: NetName=NetC34_1 Pin=U6-6
+Added Net: Name=NetC34_1
+Added Member To Class: ClassName=Sheet1 Member=Component C31 C0805C104J5RAC7800
+Added Member To Class: ClassName=Sheet1 Member=Component C32 (DIGIKEY Part Number)
+Added Member To Class: ClassName=Sheet1 Member=Component C33 (DIGIKEY Part Number)
+Added Member To Class: ClassName=Sheet1 Member=Component C34 C0805C104J5RAC7800
+Added Member To Class: ClassName=Sheet1 Member=Component C35 CC0805JKX7R9BB105
+Added Member To Class: ClassName=Sheet1 Member=Component C36 C0805C104J5RAC7800
+Added Member To Class: ClassName=Sheet1 Member=Component C37 CC0805JKX7R9BB105
+Added Member To Class: ClassName=Sheet1 Member=Component R33 749-1374-2-ND
+Added Member To Class: ClassName=Sheet1 Member=Component R34 RG2012P-103-B-T5
+Added Member To Class: ClassName=Sheet1 Member=Component R35 749-1374-2-ND
+Added Member To Class: ClassName=Sheet1 Member=Component R36 RG2012P-103-B-T5
+Added Room: Name=Sheet1
