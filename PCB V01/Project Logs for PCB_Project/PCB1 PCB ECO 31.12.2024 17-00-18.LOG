@@ -1,0 +1,7 @@
+Removed Pin From Net: NetName=GATE_T Pin=Q2-1
+Change Component Designator: OldDesignator=- Output + NewDesignator=+ Output -1
+Change Component Designator: OldDesignator=AC Input NewDesignator=AC Input1
+Change Component Designator: OldDesignator=PWM-GND  NewDesignator=PWM-GND1
+Added Pin To Net: NetName=GATE_B Pin=Q2-1
+Added Member To Class: ClassName=Sheet1 Member=Component PWM-GND1 A105225-ND
+Added Room: Name=Sheet1
